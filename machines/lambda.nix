@@ -38,13 +38,4 @@
     virtualbox
     vnstat
   ];
-
-  system.activationScripts = {
-    dotfiles_base = ''
-      rm -rf /home/placek/.gnupg
-      rm -rf /dotfiles_base
-      ln -s ${pkgs.dotfiles}/shared /dotfiles_base
-      true
-    '';
-  };
 }
