@@ -13,6 +13,14 @@
   programs.ssh.startAgent                 = false;
   security.wrappers.slock.source          = "${pkgs.slock.out}/bin/slock";
   sound.enable                            = true;
+  virtualisation.docker.autoPrune.dates   = "daily";
+  virtualisation.docker.enable            = true;
+
+  nixpkgs.config.packageOverrides = pkgs: rec {
+    projects   = pkgs.callPackage ../../packages/projects {};
+    todo       = pkgs.callPackage ../../packages/todo {};
+    wallpapers = pkgs.callPackage ../../packages/wallpapers {};
+  };
 
   services = {
     acpid.enable = true;
@@ -43,6 +51,13 @@
   };
 
   environment.systemPackages = with pkgs; [
+    docker-compose
+    moc
+    neomutt
+    projects
+    todo
+    youtube-dl
+
     arandr
     chromium
     dunst
@@ -51,8 +66,6 @@
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras
     libnotify
-    moc
-    neomutt
     paper-icon-theme
     pinentry-qt
     qutebrowser
@@ -69,7 +82,7 @@
     xmonad-with-packages
     zathura
 
-    (pass.withExtensions (ext: with ext; [pass-otp pass-import]))
+    (pass.withExtensions (ext: [ ext.pass-otp ]))
     (weechat.override {
       configure = { availablePlugins, ... }: {
         plugins = with availablePlugins; [ python perl ];

@@ -4,27 +4,10 @@ My NixOS configuration for various devices.
 
 ### structure
 
-* A **machine** has one or more role.
+* A **machine** has one or more role and one or more user.
 * A **role** is a collection of **packages** and **services**.
-
-### secrets.nix
-
-Secrets are stored in `secrets.nix` in the following form:
-
-```
-{
-  users = [
-    {
-      name = "someone";
-      isNormalUser = true;
-      description = "Some One";
-      hashedPassword = "secret password for Some One";
-      ...
-    }
-    ...
-  ];
-}
-```
+* A **user** is a configuration for particular user.
+* A **package** is a custom nix package.
 
 ### configuration.nix
 
@@ -36,6 +19,7 @@ Secrets are stored in `secrets.nix` in the following form:
     [
       ./hardware-configuration.nix
       ./machines/some-machine.nix
+      ./users/some-user.nix
     ];
 }
 ```

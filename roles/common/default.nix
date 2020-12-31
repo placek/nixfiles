@@ -19,15 +19,10 @@
   system.autoUpgrade.enable                = true;
   system.stateVersion                      = "20.09";
   time.timeZone                            = "Europe/Warsaw";
-  virtualisation.docker.autoPrune.dates    = "daily";
-  virtualisation.docker.enable             = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
-    dotfiles   = pkgs.callPackage ../../derivations/dotfiles {};
-    projects   = pkgs.callPackage ../../derivations/projects {};
-    sc         = pkgs.callPackage ../../derivations/sc {};
-    todo       = pkgs.callPackage ../../derivations/todo {};
-    wallpapers = pkgs.callPackage ../../derivations/wallpapers {};
+    dotfiles = pkgs.callPackage ../../packages/dotfiles {};
+    sc       = pkgs.callPackage ../../packages/sc {};
   };
 
   environment.systemPackages = with pkgs; [
@@ -37,7 +32,6 @@
     cryptsetup
     ctags
     curl
-    docker-compose
     entr
     fd
     ffmpeg
@@ -50,9 +44,7 @@
     ncdu
     ngrok
     openvpn
-    paperkey
     pinentry-curses
-    projects
     rclone
     rsync
     sc
@@ -60,10 +52,8 @@
     stow
     tig
     tmux
-    todo
     vifm-full
     wget
-    youtube-dl
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";
