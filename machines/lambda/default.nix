@@ -15,11 +15,11 @@
   hardware.opengl.extraPackages              = [ pkgs.vaapiIntel ];
   hardware.pulseaudio.enable                 = true;
   networking.hostName                        = "lambda";
-  powerManagement.enable                     = true;
   programs.light.enable                      = true;
   services.xserver.libinput.enable           = true;
   services.xserver.libinput.naturalScrolling = true;
   services.xserver.libinput.scrollMethod     = "twofinger";
+  services.xserver.libinput.tapping          = false;
   services.mbpfan.enable                     = true;
   services.mbpfan.lowTemp                    = 61;
   services.mbpfan.highTemp                   = 64;
