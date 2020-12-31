@@ -19,7 +19,6 @@
       displayManager.lightdm = {
         enable = true;
         greeters.mini.enable = true;
-        greeters.mini.user = "placek";
         greeters.mini.extraConfig = builtins.readFile ./sources/lightdm_greeters_mini_config;
       };
       enable = true;

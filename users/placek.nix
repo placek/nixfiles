@@ -7,4 +7,5 @@
     description = "Paweł Placzyński";
     uid = 1000;
   };
+  services.xserver.displayManager.lightdm.greeters.mini.user = "placek";
 }

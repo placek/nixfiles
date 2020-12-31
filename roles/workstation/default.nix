@@ -11,8 +11,8 @@
   virtualisation.docker.enable          = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
-    projects   = pkgs.callPackage ../../packages/projects {};
-    todo       = pkgs.callPackage ../../packages/todo {};
+    projects = pkgs.callPackage ../../packages/projects {};
+    todo     = pkgs.callPackage ../../packages/todo {};
   };
 
   services.acpid.enable = true;
