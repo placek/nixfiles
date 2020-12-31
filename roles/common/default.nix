@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  imports = [
+    ../../services/dotfiles
+  ];
+
   boot.cleanTmpDir                         = true;
   console.keyMap                           = "pl";
   i18n.defaultLocale                       = "pl_PL.UTF-8";
@@ -49,7 +53,6 @@
     rsync
     sc
     silver-searcher
-    stow
     tig
     tmux
     vifm-full

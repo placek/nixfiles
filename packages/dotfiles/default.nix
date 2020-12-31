@@ -2,18 +2,19 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "dotfiles-${version}";
-  version = "28e4f6";
+  version = "";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "dotfiles";
-    rev    = "28e4f64c88c27e99fea2e215b2a28cb875e7ed1a";
-    sha256 = "1i5g139ramngbi9fqbcqr6bh7lcy5372wfxbsih051klz9n02nhd";
+    rev    = "b63aa9ce51d8a46fa0405a70ca5bd75039fad26a";
+    sha256 = "1956vqjv3qm1qbrajds7h835j86znxnhq0pjdglpgidclrvi4xwd";
   };
 
-  buildInputs = [];
+  buildInputs = [ pkgs.stow ];
   buildPhase = "";
   installPhase = ''
+    sed -i 's#^stow=.*$#stow="${pkgs.stow}/bin/stow"#' bin/dots
     mkdir -p $out
     cp -r * $out
   '';
