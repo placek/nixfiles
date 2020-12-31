@@ -13,6 +13,7 @@
   nixpkgs.config.packageOverrides = pkgs: rec {
     projects = pkgs.callPackage ../../packages/projects {};
     todo     = pkgs.callPackage ../../packages/todo {};
+    x-utils  = pkgs.callPackage ../../packages/x-utils {};
   };
 
   services.acpid.enable = true;
@@ -24,6 +25,7 @@
     projects
     todo
     youtube-dl
+    x-utils
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
     (weechat.override {
