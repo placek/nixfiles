@@ -2,13 +2,13 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "projects-${version}";
-  version = "0f8b27";
+  version = "1dzxfx";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "projects";
-    rev    = "0f8b27c61f602b87b08bd3b5865e79bef130c3f2";
-    sha256 = "0dkz9l2ikpv62r1yjnq318cd5s0jci9hsv7f0r5madw1zn33dj8l";
+    rev    = "c036d7808aff176f5052fbc727ccf52d3ebea5f9";
+    sha256 = "1dzxfxspbb45dwp0sji0dlzjaj92k7frjyg68gyr14qvg7vq6dl4";
   };
 
   buildInputs = [];
