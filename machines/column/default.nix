@@ -3,8 +3,8 @@
 {
   imports = [
     ../../roles/common
-    ../../users/placek.nix
     # ../../roles/router
+    ../../users/placek.nix
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;

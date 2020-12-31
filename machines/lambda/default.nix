@@ -4,6 +4,7 @@
   imports = [
     ../../roles/common
     ../../roles/workstation
+    ../../roles/xserver
     ../../users/placek.nix
   ];
 
