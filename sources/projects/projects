@@ -44,9 +44,12 @@ case "$1" in
     if [ -z "$(ls -1 "$projects" | sort -n)" ]; then
       >&2 echo "projects: no projects available under $projects"
     else
-      target=$(ls -1 "$projects" | sort -n | fzf --prompt "Projects> ")
-      $tmux new-session -d -s "$target" -c "$projects/$target" "$EDITOR" \; \
-           rename-window code
+      if [ -z "$2" ]; then
+        target=$(ls -1 "$projects" | sort -n | fzf --prompt "Projects> ")
+      else
+        target=$2
+      fi
+      $tmux new-session -d -s "$target" -c "$projects/$target" "$EDITOR" \; rename-window code
     fi
     ;;
 

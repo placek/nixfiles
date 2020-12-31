@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "projects-${version}";
-  version = "1.1";
+  version = "1.2";
 
   src = ../../sources/projects;
 
