@@ -8,7 +8,6 @@ My NixOS configuration for various devices.
 * A **role** is a collection of **packages** and **services**.
 * A **user** is a configuration for particular user.
 * A **package** is a custom nix package.
-* A **service** is a systemd service.
 
 ### configuration.nix
 
