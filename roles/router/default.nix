@@ -53,6 +53,6 @@ in
     services.dnsmasq = {
       enable = true;
       servers = [ "8.8.8.8" "8.8.4.4" ];
-      extraConfig = builtins.readFile ../sources/dnsmasq/config;
+      extraConfig = builtins.readFile ./sources/dnsmasq_config;
     };
   }

@@ -2,8 +2,9 @@
 
 {
   imports = [
-    ../roles/common.nix
-    ../roles/workstation.nix
+    ../roles/common
+    ../roles/workstation
+    ../../users/placek.nix
   ];
 
   boot.loader.grub = {

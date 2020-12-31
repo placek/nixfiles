@@ -23,7 +23,7 @@
         enable = true;
         greeters.mini.enable = true;
         greeters.mini.user = "placek";
-        greeters.mini.extraConfig = builtins.readFile ../sources/lightdm_greeters_mini/config;
+        greeters.mini.extraConfig = builtins.readFile ./sources/lightdm_greeters_mini_config;
       };
       enable = true;
       layout = "pl";
@@ -74,7 +74,7 @@
       configure = { availablePlugins, ... }: {
         plugins = with availablePlugins; [ python perl ];
         scripts = with pkgs.weechatScripts; [ weechat-notify-send wee-slack ];
-        init = builtins.readFile ../sources/weechat/config;
+        init = builtins.readFile ./sources/weechat_config;
       };
     })
   ];
