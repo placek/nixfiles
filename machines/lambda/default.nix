@@ -28,7 +28,6 @@
   users.users.placek.packages = with pkgs; [
     arduino
     blender
-    dotfiles
     eagle
     fusuma
     gimp

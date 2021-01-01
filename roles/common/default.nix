@@ -32,6 +32,7 @@
     cryptsetup
     ctags
     curl
+    dotfiles
     entr
     fd
     ffmpeg
