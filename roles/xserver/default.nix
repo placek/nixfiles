@@ -54,7 +54,6 @@
     rofi-pass
     scrot
     slock
-    sxiv
     termite
     wallpapers
     xclip
