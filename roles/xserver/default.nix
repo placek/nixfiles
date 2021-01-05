@@ -46,6 +46,7 @@
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras
+    kitty
     libnotify
     paper-icon-theme
     pinentry-qt
@@ -54,7 +55,6 @@
     rofi-pass
     scrot
     slock
-    termite
     wallpapers
     xclip
     xdotool

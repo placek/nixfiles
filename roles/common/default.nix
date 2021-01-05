@@ -50,6 +50,7 @@
     rsync
     sc
     silver-searcher
+    stow
     tig
     tmux
     vifm-full
