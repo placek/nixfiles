@@ -10,6 +10,7 @@
 
   boot.loader.efi.canTouchEfiVariables       = true;
   boot.loader.systemd-boot.enable            = true;
+  boot.initrd.kernelModules                  = [ "amdgpu" ];
   hardware.bluetooth.enable                  = true;
   hardware.facetimehd.enable                 = true;
   hardware.opengl.extraPackages              = [ pkgs.vaapiIntel ];
