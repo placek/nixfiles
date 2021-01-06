@@ -53,6 +53,7 @@
     stow
     tig
     tmux
+    unzip
     vifm-full
     wget
 
