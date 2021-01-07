@@ -2,6 +2,9 @@
 
 {
   imports = [
+    ../../hardware/usb/backup
+    ../../hardware/usb/polpharma
+
     ../../roles/common
     ../../roles/workstation
     ../../roles/xserver
