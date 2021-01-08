@@ -7,6 +7,7 @@
     ../../hardware/usb/polpharma
 
     ../../roles/common
+    ../../roles/entertainment
     ../../roles/workstation
     ../../roles/xserver
     ../../users/placek.nix
