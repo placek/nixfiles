@@ -5,7 +5,6 @@
   environment.systemPackages = with pkgs; [
     glxinfo
     mesa
-    winetricks
     wineWowPackages.staging
   ];
 }
