@@ -3,6 +3,7 @@
 {
   imports = [
     ../../hardware/usb/backup
+    ../../hardware/usb/cdrom
     ../../hardware/usb/polpharma
 
     ../../roles/common
