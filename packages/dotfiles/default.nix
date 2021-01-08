@@ -2,13 +2,13 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "dotfiles-${version}";
-  version = "8c3736";
+  version = "67ed51";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "dotfiles";
-    rev    = "8c37366829eab5f4eb24cd2f59d3441512c4bda8";
-    sha256 = "1gpi2kq7yv0k08gw2i004n0vffyfywgldqnybynh0m44q35i68dg";
+    rev    = "67ed51385621cf35fc036bb2d243c70de3d2b2f6";
+    sha256 = "0lpv3k2pjxrbg9h2s2s8jkycvak59y8d5l1sw2b25ds19ckkz6cv";
   };
 
   buildInputs = [];
