@@ -18,7 +18,7 @@
   system.autoUpgrade.allowReboot           = true;
   system.autoUpgrade.channel               = https://nixos.org/channels/nixos-20.09;
   system.autoUpgrade.enable                = true;
-  system.stateVersion                      = "20.09";
+  system.stateVersion                      = "21.03";
   time.timeZone                            = "Europe/Warsaw";
 
   nixpkgs.config.packageOverrides = pkgs: rec {
