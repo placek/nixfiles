@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, modulesPath, ... }:
 
 {
   imports = [
+    (modulesPath + "/hardware/network/broadcom-43xx.nix")
+    (modulesPath + "/installer/scan/not-detected.nix")
+
     ../../hardware/usb/backup
     ../../hardware/usb/cdrom
     ../../hardware/usb/polpharma
@@ -13,7 +16,22 @@
     ../../users/placek.nix
   ];
 
+  fileSystems."/" =
+    { device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-label/BOOT";
+      fsType = "vfat";
+    };
+
+  swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
+
+  boot.extraModulePackages                   = [ ];
+  boot.initrd.availableKernelModules         = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules                  = [ "amdgpu" ];
+  boot.kernelModules                         = [ "kvm-intel" ];
   boot.kernelPackages                        = pkgs.linuxPackages_5_4;
   boot.loader.efi.canTouchEfiVariables       = true;
   boot.loader.systemd-boot.enable            = true;
@@ -26,7 +44,9 @@
   hardware.pulseaudio.enable                 = true;
   hardware.pulseaudio.extraModules           = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                = pkgs.pulseaudioFull;
+  hardware.video.hidpi.enable                = lib.mkDefault true;
   networking.hostName                        = "lambda";
+  powerManagement.cpuFreqGovernor            = lib.mkDefault "powersave";
   programs.light.enable                      = true;
   services.mbpfan.enable                     = true;
   services.mbpfan.highTemp                   = 64;
