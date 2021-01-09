@@ -24,6 +24,8 @@
   hardware.opengl.enable                     = true;
   hardware.opengl.extraPackages              = [ pkgs.vaapiIntel ];
   hardware.pulseaudio.enable                 = true;
+  hardware.pulseaudio.extraModules           = [ pkgs.pulseaudio-modules-bt ];
+  hardware.pulseaudio.package                = pkgs.pulseaudioFull;
   networking.hostName                        = "lambda";
   programs.light.enable                      = true;
   services.mbpfan.enable                     = true;
