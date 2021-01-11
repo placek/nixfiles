@@ -41,6 +41,7 @@
     fzf
     git
     gnumake
+    haskellPackages.mustache
     imagemagick7
     inxi
     ncdu
