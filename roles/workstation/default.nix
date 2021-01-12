@@ -28,12 +28,5 @@
     x-utils
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
-    (weechat.override {
-      configure = { availablePlugins, ... }: {
-        plugins = with availablePlugins; [ python perl ];
-        scripts = with pkgs.weechatScripts; [ weechat-notify-send wee-slack ];
-        init = builtins.readFile ./sources/weechat_config;
-      };
-    })
   ];
 }
