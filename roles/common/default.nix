@@ -61,7 +61,7 @@
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";
-      vimrcConfig.customRC = builtins.readFile ./sources/vim_config;
+      vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
           YouCompleteMe

@@ -2,13 +2,13 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "dotfiles-${version}";
-  version = "f9f282";
+  version = "a7f3fd";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "dotfiles";
-    rev    = "f9f28289b2917ce525c929d90007f1e5d78f890c";
-    sha256 = "0gigrsr11f628v9cvz3n78cmy3rs6c70ihd1lar9p7rbcl86k37y";
+    rev    = "a7f3fdb80fedcae5551c7f16c6e96081b065f8d6";
+    sha256 = "0ah9caq3878jr1ml4amc67mbvg67aycbn61rvivg7apwnc48ns7a";
   };
 
   buildInputs = [ pkgs.haskellPackages.mustache ];
