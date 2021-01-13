@@ -34,6 +34,7 @@
     ctags
     curl
     dotfiles
+    ed
     entr
     fd
     ffmpeg
