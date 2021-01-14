@@ -38,6 +38,7 @@
     entr
     fd
     ffmpeg
+    file
     fish
     fzf
     git
@@ -56,6 +57,7 @@
     stow
     tig
     tmux
+    unrar
     unzip
     vifm-full
     wget
