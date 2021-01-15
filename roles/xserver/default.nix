@@ -13,7 +13,16 @@
   };
 
   services = {
+    acpid.enable = true;
+    acpid.lidEventCommands = ''
+      export PATH=$PATH:/run/current-system/sw/bin
+      lid_state=$(cat /proc/acpi/button/lid/LID0/state | awk '{print $NF}')
+      [ $lid_state = "closed" ] && systemctl suspend
+    '';
+    acpid.powerEventCommands = "systemctl suspend";
     greenclip.enable = true;
+    logind.extraConfig = "HandlePowerKey=ignore";
+    logind.lidSwitch = "ignore";
     xserver = {
       displayManager.defaultSession = "none+xmonad";
       displayManager.lightdm = {
