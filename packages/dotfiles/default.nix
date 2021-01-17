@@ -1,18 +1,18 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  name = "dotfiles-${version}";
-  version = "deb2f5";
+  name    = "dotfiles-${version}";
+  version = "dcde253";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "dotfiles";
-    rev    = "deb2f5f63e7f5d56e1e7d7e6c86a1c35bd5a360b";
-    sha256 = "02srb5638k20gbl6zgqhvj4ynj651n4x78ldaxwzrcim16r040p7";
+    rev    = "dcde253f69cb145f5560b4acdfb8bb8df075c065";
+    sha256 = "03bsdhhw1y30xmi2kd17lcfb3fhqiycgiby91qbwvszcyjdwd7hc";
   };
 
-  buildInputs = [ pkgs.haskellPackages.mustache ];
-  buildPhase = "";
+  buildInputs  = [ pkgs.haskellPackages.mustache ];
+  buildPhase   = "";
   installPhase = ''
     mkdir -p $out
     cp -r * $out
