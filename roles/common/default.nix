@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 {
   boot.cleanTmpDir                         = true;
+  boot.consoleLogLevel                     = 0;
   boot.supportedFilesystems                = [ "ntfs" ];
   console.keyMap                           = "pl";
   i18n.defaultLocale                       = "pl_PL.UTF-8";
