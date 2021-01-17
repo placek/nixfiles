@@ -11,7 +11,6 @@
   boot.loader.systemd-boot.enable      = true;
   networking.hostName                  = "column";
   services.sshd.enable                 = true;
-  services.sshd.passwordAuthentication = false;
 
   # remove after new internet arrive
   networking.wireless.enable = true;

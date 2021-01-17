@@ -6,45 +6,27 @@
   fonts.fontconfig.defaultFonts.sansSerif = [ "Ubuntu" ];
   fonts.fontconfig.defaultFonts.serif     = [ "Ubuntu" ];
   fonts.fonts                             = [ pkgs.iosevka-bin pkgs.ubuntu_font_family ];
-  security.wrappers.slock.source          = "${pkgs.slock.out}/bin/slock";
 
   nixpkgs.config.packageOverrides = pkgs: rec {
     wallpapers = pkgs.callPackage ../../packages/wallpapers {};
   };
 
   services = {
-    acpid.enable = true;
-    acpid.lidEventCommands = ''
-      export PATH=$PATH:/run/current-system/sw/bin
-      lid_state=$(cat /proc/acpi/button/lid/LID0/state | awk '{print $NF}')
-      [ $lid_state = "closed" ] && systemctl suspend
-    '';
-    acpid.powerEventCommands = "systemctl suspend";
-    greenclip.enable = true;
-    logind.extraConfig = "HandlePowerKey=ignore";
-    logind.lidSwitch = "ignore";
-    xserver = {
-      displayManager.defaultSession = "none+xmonad";
-      displayManager.lightdm = {
-        enable = true;
-        greeters.mini.enable = true;
-        greeters.mini.extraConfig = builtins.readFile ./sources/lightdm_greeters_mini_config;
-      };
-      enable = true;
-      layout = "pl";
-      windowManager.xmonad = {
-        enableContribAndExtras = true;
-        haskellPackages = pkgs.haskell.packages.ghc865;
-        extraPackages = haskellPackages: with haskellPackages; [
-          alsa-core
-          alsa-mixer
-          xmonad
-          xmonad-contrib
-          xmonad-extras
-        ];
-        enable = true;
-      };
-    };
+    acpid.enable                                             = true;
+    acpid.powerEventCommands                                 = "systemctl suspend";
+    greenclip.enable                                         = true;
+    logind.extraConfig                                       = "HandlePowerKey=ignore";
+    physlock.enable                                          = true;
+    xserver.displayManager.defaultSession                    = "none+xmonad";
+    xserver.displayManager.lightdm.enable                    = true;
+    xserver.displayManager.lightdm.greeters.mini.enable      = true;
+    xserver.displayManager.lightdm.greeters.mini.extraConfig = builtins.readFile ./sources/lightdm_greeters_mini_config;
+    xserver.enable                                           = true;
+    xserver.layout                                           = "pl";
+    xserver.windowManager.xmonad.enable                      = true;
+    xserver.windowManager.xmonad.enableContribAndExtras      = true;
+    xserver.windowManager.xmonad.extraPackages               = haskellPackages: with haskellPackages; [ alsa-core alsa-mixer xmonad xmonad-contrib xmonad-extras ];
+    xserver.windowManager.xmonad.haskellPackages             = pkgs.haskell.packages.ghc865;
   };
 
   environment.systemPackages = with pkgs; [
@@ -63,7 +45,6 @@
     rofi
     rofi-pass
     scrot
-    slock
     wallpapers
     xclip
     xdotool
