@@ -31,9 +31,9 @@
 
   environment.systemPackages = with pkgs; [
     arandr
-    chromium
     dunst
     feh
+    google-chrome
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras
