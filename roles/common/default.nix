@@ -5,9 +5,6 @@
   boot.supportedFilesystems                = [ "ntfs" ];
   console.keyMap                           = "pl";
   i18n.defaultLocale                       = "pl_PL.UTF-8";
-  networking.firewall.allowPing            = false;
-  networking.firewall.allowedTCPPortRanges = [ { from = 3000; to = 3009; } ];
-  networking.firewall.enable               = true;
   nix.gc.automatic                         = true;
   nix.gc.options                           = "--delete-older-than 7d";
   nix.useSandbox                           = true;

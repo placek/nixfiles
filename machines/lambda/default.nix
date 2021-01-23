@@ -8,6 +8,7 @@
     ../../hardware/usb/backup
     ../../hardware/usb/cdrom
     ../../hardware/usb/polpharma
+    ../../hardware/usb/secret
 
     ../../roles/common
     ../../roles/entertainment
@@ -45,6 +46,9 @@
   hardware.pulseaudio.extraModules           = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                = pkgs.pulseaudioFull;
   hardware.video.hidpi.enable                = lib.mkDefault true;
+  networking.firewall.allowPing              = false;
+  networking.firewall.allowedTCPPortRanges   = [ { from = 3000; to = 3009; } ];
+  networking.firewall.enable                 = true;
   networking.hostName                        = "lambda";
   powerManagement.cpuFreqGovernor            = lib.mkDefault "powersave";
   programs.light.enable                      = true;
