@@ -7,7 +7,6 @@
 
     ../../hardware/usb/backup
     ../../hardware/usb/cdrom
-    ../../hardware/usb/polpharma
     ../../hardware/usb/secret
 
     ../../roles/common
