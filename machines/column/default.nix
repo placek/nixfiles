@@ -4,6 +4,7 @@
   imports = [
     ../../roles/common
     ../../roles/nextcloud
+    ../../roles/mailserver
     ../../roles/router
     ../../users/placek.nix
   ];
