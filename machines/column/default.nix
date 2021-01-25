@@ -3,6 +3,7 @@
 {
   imports = [
     ../../roles/common
+    ../../roles/nextcloud
     ../../roles/router
     ../../users/placek.nix
   ];
