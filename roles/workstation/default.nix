@@ -23,6 +23,7 @@
     moc
     neomutt
     projects
+    tiv
     todo
     youtube-dl
     x-utils

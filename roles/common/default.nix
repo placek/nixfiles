@@ -55,7 +55,6 @@
     silver-searcher
     stow
     tig
-    tiv
     tmux
     unrar
     unzip
