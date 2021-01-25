@@ -21,7 +21,7 @@
 
   services.nextcloud = {
     enable                 = true;
-    hostName               = "nextcloud.example.com";
+    hostName               = "nextcloud.placki.cloud";
     https                  = true;
     autoUpdateApps.enable  = true;
     autoUpdateApps.startAt = "03:00:00";
