@@ -4,19 +4,9 @@
   security.acme.acceptTerms = true;
   security.acme.email       = "placzynski.pawel@gmail.com";
 
-  services.nginx = {
-    enable                   = true;
-    recommendedGzipSettings  = true;
-    recommendedOptimisation  = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings   = true;
-    sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
-    virtualHosts = {
-      "nextcloud.placki.cloud" = {
-        forceSSL = true;
-        enableACME = true;
-      };
-    };
+  services.nginx.virtualHosts."nextcloud.placki.cloud" = {
+    forceSSL   = true;
+    enableACME = true;
   };
 
   services.nextcloud = {
