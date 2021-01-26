@@ -16,7 +16,6 @@
       80    # http
       443   # https
       2222  # git
-      5000  # docker registry
     ];
     allowedUDPPorts = [ ];
   };
@@ -58,5 +57,10 @@
     recommendedProxySettings = true;
     recommendedTlsSettings   = true;
     sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
+
+    virtualHosts."app.placki.cloud" = {
+      forceSSL   = true;
+      enableACME = true;
+    };
   };
 }
