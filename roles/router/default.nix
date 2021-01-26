@@ -3,6 +3,8 @@
 {
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
+  services.dockerRegistry.enable = true;
+
   networking.domain      = "local";
   networking.nameservers = [ "127.0.0.1" "8.8.8.8" ];
 
@@ -16,6 +18,7 @@
       80    # http
       443   # https
       2222  # git
+      5000  # docker registry
     ];
     allowedUDPPorts = [ ];
   };
