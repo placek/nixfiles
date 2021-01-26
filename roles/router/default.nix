@@ -3,6 +3,9 @@
 {
   boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 
+  virtualisation.docker.autoPrune.dates = "daily";
+  virtualisation.docker.enable          = true;
+
   networking.domain      = "local";
   networking.nameservers = [ "127.0.0.1" "8.8.8.8" ];
 
