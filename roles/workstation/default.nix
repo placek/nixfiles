@@ -13,6 +13,7 @@
   nixpkgs.config.packageOverrides = pkgs: rec {
     projects = pkgs.callPackage ../../packages/projects {};
     todo     = pkgs.callPackage ../../packages/todo {};
+    vasm     = pkgs.callPackage ../../packages/vasm {};
     x-utils  = pkgs.callPackage ../../packages/x-utils {};
   };
 
@@ -25,8 +26,9 @@
     projects
     tiv
     todo
-    youtube-dl
+    vasm
     x-utils
+    youtube-dl
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
   ];
