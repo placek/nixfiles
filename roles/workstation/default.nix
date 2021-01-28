@@ -11,6 +11,7 @@
   virtualisation.docker.enable          = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
+    minipro  = pkgs.callPackage ../../packages/minipro {};
     projects = pkgs.callPackage ../../packages/projects {};
     todo     = pkgs.callPackage ../../packages/todo {};
     vasm     = pkgs.callPackage ../../packages/vasm {};
@@ -21,6 +22,7 @@
 
   environment.systemPackages = with pkgs; [
     docker-compose
+    minipro
     moc
     neomutt
     projects
