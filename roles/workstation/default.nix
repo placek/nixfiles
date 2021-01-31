@@ -11,6 +11,7 @@
   virtualisation.docker.enable          = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
+    dcc6502  = pkgs.callPackage ../../packages/dcc6502 {};
     minipro  = pkgs.callPackage ../../packages/minipro {};
     projects = pkgs.callPackage ../../packages/projects {};
     todo     = pkgs.callPackage ../../packages/todo {};
@@ -21,6 +22,8 @@
   services.acpid.enable = true;
 
   environment.systemPackages = with pkgs; [
+    avrdude
+    dcc6502
     docker-compose
     minipro
     moc
@@ -28,6 +31,7 @@
     projects
     tiv
     todo
+    usbutils
     vasm
     x-utils
     youtube-dl
