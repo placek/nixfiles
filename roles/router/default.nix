@@ -62,15 +62,9 @@
     sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
 
     virtualHosts."app.placki.cloud" = {
-      forceSSL   = true;
-      enableACME = true;
-      listen     = [
-        {
-          addr = "127.0.0.1";
-          port = 8080;
-          ssl  = true;
-        }
-      ];
+      forceSSL      = true;
+      enableACME    = true;
+      locations."/" = { proxyPass = "http://localhost:8080"; };
     };
   };
 }
