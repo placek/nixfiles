@@ -23,6 +23,7 @@
 
   environment.systemPackages = with pkgs; [
     avrdude
+    pkgsCross.avr.buildPackages.gcc
     dcc6502
     docker-compose
     minipro
