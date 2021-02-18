@@ -61,7 +61,9 @@
   services.xserver.libinput.tapping          = false;
 
   users.users.placek.packages = with pkgs; [
+    arduino
     blender
+    eagle
     fusuma
     gimp
     inkscape
