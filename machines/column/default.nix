@@ -6,6 +6,7 @@
     ../../roles/nextcloud
     ../../roles/router
     ../../users/placek.nix
+    ../../users/git.nix
   ];
 
   boot.loader.efi.canTouchEfiVariables = true;
