@@ -37,7 +37,7 @@
       else
         echo "creating new repo: '$newRepoDir'"
         mkdir -p $newRepoDir
-        git init --bare --template="$reposDir/template" "${newRepoDir}"
+        git init --bare --template="$reposDir/template" "$newRepoDir"
         echo "new repo: '$newRepoDir' created"
       fi
     '';
@@ -98,7 +98,7 @@
   repos-list = pkgs.stdenv.mkDerivation rec {
     name        = "repos-list";
     builder     = "${pkgs.sh}/bin/sh";
-    args        = [ ./shell-string-script-builder.sh  ];
+    args        = [ ./shell-script-builder.sh  ];
     buildInputs = [ pkgs.coreutils ];
     system      = builtins.currentSystem;
     src         = ''
