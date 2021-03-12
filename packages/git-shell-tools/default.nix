@@ -7,7 +7,7 @@
     args        = [ ./shell-script-builder.sh  ];
     buildInputs = [ pkgs.coreutils ];
     system      = builtins.currentSystem;
-    src         = ''
+    src         = builtins.toFile "repos-create" ''
       #!/bin/sh
 
       reposDir="${repos-dir}"
@@ -48,7 +48,7 @@
     args        = [ ./shell-script-builder.sh  ];
     buildInputs = [ pkgs.coreutils ];
     system      = builtins.currentSystem;
-    src         = ''
+    src         = builtins.toFile "repos-delete" ''
       #!/bin/sh
 
       reposDir="${repos-dir}"
@@ -99,7 +99,7 @@
     args        = [ ./shell-script-builder.sh  ];
     buildInputs = [ pkgs.coreutils ];
     system      = builtins.currentSystem;
-    src         = ''
+    src         = builtins.toFile "repos-list" ''
       #!/bin/sh
 
       reposDir="${repos-dir}"
