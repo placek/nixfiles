@@ -146,7 +146,7 @@
     src         = builtins.toFile "ci-run" ''
       #!/bin/sh
 
-      reposDir="${repos-dir}"
+      reposDir="/var/git"
       pipelines="$reposDir/pipelines"
 
       if [ -z "$1" ]; then
@@ -157,9 +157,13 @@
 
       case "$1" in
       *.git)
-        repoDir=$reposDir/$1 ;;
+        repoDir=$reposDir/$1
+        pipeline=$pipelines/$1-$(date +%s | sha1sum - | cut -d ' ' -f 1)
+        ;;
       *)
-        repoDir=$reposDir/$1.git ;;
+        repoDir=$reposDir/$1.git
+        pipeline=$pipelines/$1.git-$(date +%s | sha1sum - | cut -d ' ' -f 1)
+        ;;
       esac
 
       if [ ! -d "$repoDir" ]; then
@@ -167,19 +171,25 @@
         exit 1
       fi
 
-      if [ ! -f "$workDir/.ci.runner" ] || [ ! -f "$workDir/.ci.image" ] || [ ! -f "$workDir/.ci.compose" ]; then
-        echo "exiting, no CI configuration found in $repoDir"
-        exit 1
-      fi
-
       workDir=$(mktemp -d)
-      git clone "$repoDir" "$workDir"
+      echo ">>> pipeline started at $(date) in $workDir <<<" >> $pipeline
+      git clone "$repoDir" "$workDir" |& tee -a $pipeline
 
       ciRunner="$workDir/.ci.runner"
       ciImage="$workDir/.ci.image"
       ciCompose="$workDir/.ci.compose"
 
-      exec $ciRunner
+      if [ ! -f "$ciRunner" ] || [ ! -f "$ciImage" ] || [ ! -f "$ciCompose" ]; then
+        echo "exiting, no CI configuration found in $repoDir"
+        rm $workDir
+        exit 1
+      fi
+
+      echo >> $pipeline
+      exec $ciRunner |& tee -a $pipeline
+      echo >> $pipeline
+      echo ">>> done <<<" >> $pipeline
+      echo $(basename $pipeline)
     '';
   };
 }
