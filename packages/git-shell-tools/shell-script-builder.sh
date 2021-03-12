@@ -1,6 +1,4 @@
 #!/bin/sh
-set -e
-
 unset PATH
 
 for p in $buildInputs; do
@@ -8,4 +6,4 @@ for p in $buildInputs; do
 done
 
 mkdir -p $out/bin
-cp $src $out/bin/$name
+cp "$src" "$out/bin/$name"
