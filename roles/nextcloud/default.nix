@@ -15,6 +15,7 @@
     https                  = true;
     autoUpdateApps.enable  = true;
     autoUpdateApps.startAt = "03:00:00";
+    package                = pkgs.nextcloud20;
 
     config = {
       overwriteProtocol = "https";
