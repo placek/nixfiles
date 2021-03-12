@@ -11,7 +11,6 @@
       #!/bin/sh
 
       reposDir="${repos-dir}"
-      set -e
 
       if [ -z "$reposDir" ] || [ ! -d "$reposDir" ]; then
         echo "exiting, can't find reposDir or env variables not set"
@@ -53,7 +52,6 @@
       #!/bin/sh
 
       reposDir="${repos-dir}"
-      set -e
 
       if [ -z "$reposDir" ] || [ ! -d "$reposDir" ]; then
       	echo "exiting, can't find reposDir or env variables not set"
