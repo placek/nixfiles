@@ -105,7 +105,7 @@
 
       reposDir="${repos-dir}"
 
-      ls $reposDir/pipeline/* | xargs -n1 basename
+      ls $reposDir/pipelines/* | xargs -n1 basename
     '';
   };
 
@@ -147,6 +147,7 @@
       #!/bin/sh
 
       reposDir="${repos-dir}"
+      pipelines="$reposDir/pipelines"
 
       if [ -z "$1" ]; then
         echo "exiting, no repo input to run"
@@ -166,7 +167,19 @@
         exit 1
       fi
 
-      echo "TODO: implement this shit"
+      if [ ! -f "$workDir/.ci.runner" ] || [ ! -f "$workDir/.ci.image" ] || [ ! -f "$workDir/.ci.compose" ]; then
+        echo "exiting, no CI configuration found in $repoDir"
+        exit 1
+      fi
+
+      workDir=$(mktemp -d)
+      git clone "$repoDir" "$workDir"
+
+      ciRunner="$workDir/.ci.runner"
+      ciImage="$workDir/.ci.image"
+      ciCompose="$workDir/.ci.compose"
+
+      exec $ciRunner
     '';
   };
 }
