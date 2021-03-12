@@ -18,8 +18,12 @@ in
 
     environment.systemPackages = with pkgs; [
       git
+      docker-compose
       repos.repos-create
       repos.repos-delete
       repos.repos-list
+      repos.ci-list
+      repos.ci-show
+      repos.ci-run
     ];
   }

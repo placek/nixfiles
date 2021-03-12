@@ -12,14 +12,9 @@
 
       reposDir="${repos-dir}"
 
-      if [ -z "$reposDir" ] || [ ! -d "$reposDir" ]; then
-        echo "exiting, can't find reposDir or env variables not set"
-        exit 1
-      fi
-
       if [ -z "$1" ]; then
         echo "exiting, no repo name input to create"
-        echo "usage: 'repos-create <name-of-repo-to-create>'"
+        echo "usage: 'repos-create <repo>'"
         exit 1
       fi
 
@@ -31,13 +26,13 @@
       esac
 
       if [ -d "$newRepoDir" ]; then
-        echo "repo: '$newRepoDir' already exists, exiting..."
+        echo "exiting, repo '$newRepoDir' already exists"
         exit 1
       else
-        echo "creating new repo: '$newRepoDir'"
+        echo "creating new repo '$newRepoDir'"
         mkdir -p $newRepoDir
         git init --bare --template="$reposDir/template" "$newRepoDir"
-        echo "new repo: '$newRepoDir' created"
+        echo "new repo '$newRepoDir' created"
       fi
     '';
   };
@@ -53,43 +48,34 @@
 
       reposDir="${repos-dir}"
 
-      if [ -z "$reposDir" ] || [ ! -d "$reposDir" ]; then
-      	echo "exiting, can't find reposDir or env variables not set"
-      	exit 1
-      elif [ -z "$1" ]; then
+      if [ -z "$1" ]; then
         echo "exiting, no repo name input to delete"
-        echo "usage: 'repos-delete <name-of-repo-to-delete>'"
+        echo "usage: 'repos-delete <repo>'"
         exit 1
       fi
 
       case "$1" in
       *.git)
         deleteRepoDir=$reposDir/$1
-        deleteRepoBackupHash=$reposDir/sha-$1.sha256 ;;
       *)
         deleteRepoDir=$reposDir/$1.git
-        deleteRepoBackupHash=$reposBackupDir/sha-$1.git.sha256 ;;
       esac
 
       if [ ! -d "$deleteRepoDir" ]; then
-        echo "exiting, git repo at: '$deleteRepoDir' does not exist"
+        echo "exiting, repo '$deleteRepoDir' does not exist"
         exit 1
       fi
 
-      read -p "would you like to delete the git repo at: '$deleteRepoDir' (y/n)? " choice
+      read -p "are you sure to delete the repo '$deleteRepoDir' (y/n)? " choice
       case "$choice" in
-      y|Y) echo "'yes' selected, deleting: '$deleteRepoDir'" ;;
+      y|Y) echo "'yes' selected, deleting '$deleteRepoDir'" ;;
       n|N) echo "'no' selected, exiting" && exit 0 ;;
       *) echo "invalid option, exiting" && exit 1 ;;
       esac
 
       rm -rf $deleteRepoDir
 
-      if [ -f "$deleteRepoBackupHash" ]; then
-        rm $deleteRepoBackupHash
-      fi
-
-      echo "git repo '$deleteRepoDir' has been deleted"
+      echo "repo '$deleteRepoDir' has been deleted"
     '';
   };
 
@@ -103,7 +89,84 @@
       #!/bin/sh
 
       reposDir="${repos-dir}"
+
       ls -d $reposDir/*.git | xargs -n1 basename
+    '';
+  };
+
+  ci-list = pkgs.stdenv.mkDerivation rec {
+    name        = "ci-list";
+    builder     = "${pkgs.sh}/bin/sh";
+    args        = [ ./shell-script-builder.sh  ];
+    buildInputs = [ pkgs.coreutils ];
+    system      = builtins.currentSystem;
+    src         = builtins.toFile "ci-list" ''
+      #!/bin/sh
+
+      reposDir="${repos-dir}"
+
+      ls $reposDir/pipeline/* | xargs -n1 basename
+    '';
+  };
+
+  ci-show = pkgs.stdenv.mkDerivation rec {
+    name        = "ci-show";
+    builder     = "${pkgs.sh}/bin/sh";
+    args        = [ ./shell-script-builder.sh  ];
+    buildInputs = [ pkgs.coreutils ];
+    system      = builtins.currentSystem;
+    src         = builtins.toFile "ci-show" ''
+      #!/bin/sh
+
+      reposDir="${repos-dir}"
+
+      if [ -z "$1" ]; then
+        echo "exiting, no pipeline input to show"
+        echo "usage: 'ci-show <pipeline>'"
+        exit 1
+      fi
+
+      pipeline="$reposDir/pipelines/$1"
+
+      if [ ! -f "$pipeline" ]; then
+        echo "exiting, cannot find pipeline $pipeline"
+        exit 1
+      fi
+
+      cat $pipeline
+    '';
+  };
+
+  ci-run = pkgs.stdenv.mkDerivation rec {
+    name        = "ci-run";
+    builder     = "${pkgs.sh}/bin/sh";
+    args        = [ ./shell-script-builder.sh  ];
+    buildInputs = [ pkgs.coreutils ];
+    system      = builtins.currentSystem;
+    src         = builtins.toFile "ci-run" ''
+      #!/bin/sh
+
+      reposDir="${repos-dir}"
+
+      if [ -z "$1" ]; then
+        echo "exiting, no repo input to run"
+        echo "usage: 'ci-run <repo>'"
+        exit 1
+      fi
+
+      case "$1" in
+      *.git)
+        repoDir=$reposDir/$1 ;;
+      *)
+        repoDir=$reposDir/$1.git ;;
+      esac
+
+      if [ ! -d "$repoDir" ]; then
+        echo "exiting, cannot find repo $repoDir"
+        exit 1
+      fi
+
+      echo "TODO: implement this shit"
     '';
   };
 }
