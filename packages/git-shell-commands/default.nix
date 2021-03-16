@@ -2,13 +2,13 @@
 
 pkgs.stdenv.mkDerivation rec {
   name    = "git-shell-commands-${version}";
-  version = "f750ef";
+  version = "69adb2";
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "git-shell-commands";
-    rev    = "f750ef71d7a116f715fe91403b037a5d1ae58b92";
-    sha256 = "1ch5vnfbsi9z1715bplvqgl7w1gkwqv1jcadk6rr5qbfy8c7i9k8";
+    rev    = "69adb2564fefb76e369b9e1649c235f5c19a4326";
+    sha256 = "0r1d8nf3vx5kvy358lbznly8r37wcgf1wa73alcrdl485lsgr4rr";
   };
 
   buildInputs  = [];
