@@ -18,7 +18,8 @@
 
   environment.systemPackages = with pkgs; [
     git
-    docker-compose
     git-shell-commands
   ];
+
+  containers.ci-runner = { config = { config, pkgs, ... }: { environment.systemPackages = with pkgs; [ docker-compose ]; }; };
 }
