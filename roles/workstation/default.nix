@@ -26,6 +26,8 @@
     pkgsCross.avr.buildPackages.gcc
     dcc6502
     docker-compose
+    ghostscript
+    google-fonts
     minipro
     moc
     neomutt
