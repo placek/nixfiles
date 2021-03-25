@@ -12,6 +12,7 @@
   services.cron.enable                     = true;
   services.pcscd.enable                    = true;
   services.printing.enable                 = true;
+  services.printing.drivers                = [ pkgs.foo2zjs ];
   services.udev.packages                   = [ pkgs.yubikey-personalization ];
   system.autoUpgrade.allowReboot           = true;
   system.autoUpgrade.channel               = https://nixos.org/channels/nixos-20.09;
