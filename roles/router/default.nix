@@ -62,6 +62,8 @@
     sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
 
     virtualHosts."app.placki.cloud" = {
+      forceSSL      = true;
+      enableACME    = true;
       locations."/" = { proxyPass = "http://localhost:8080"; };
     };
   };
@@ -71,26 +73,24 @@
     wantedBy    = [ "multi-user.target" ];
     after       = [ "docker.service" "docker.socket" ];
     requires    = [ "docker.service" "docker.socket" ];
-    script = ''
+    preStop     = "${pkgs.docker}/bin/docker stop nginx-proxy";
+    reload      = "${pkgs.docker}/bin/docker restart nginx-proxy";
+    script      = ''
       exec ${pkgs.docker}/bin/docker run \
           --rm \
           --name=nginx-proxy \
           --network=nginx-proxy_net \
-          --publish 8080:80
+          --publish 8080:80 \
           --volume /var/run/docker.sock:/tmp/docker.sock:ro \
           jwilder/nginx-proxy:alpine \
           "$@"
     '';
-    scriptArgs = lib.concatStringsSep " " [
-    ];
-    preStop = "${pkgs.docker}/bin/docker stop nginx-proxy";
-    reload = "${pkgs.docker}/bin/docker restart nginx-proxy";
     serviceConfig = {
-      ExecStartPre = "-${pkgs.docker}/bin/docker network create nginx-proxy_net";
-      ExecStopPost = "-${pkgs.docker}/bin/docker rm -f nginx-proxy";
+      ExecStartPre    = "-${pkgs.docker}/bin/docker network create nginx-proxy_net";
+      ExecStopPost    = "-${pkgs.docker}/bin/docker rm -f nginx-proxy";
       TimeoutStartSec = 0;
-      TimeoutStopSec = 120;
-      Restart = "always";
+      TimeoutStopSec  = 120;
+      Restart         = "always";
     };
   };
 }
