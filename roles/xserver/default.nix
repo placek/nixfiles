@@ -26,7 +26,6 @@
     xserver.windowManager.xmonad.enable                      = true;
     xserver.windowManager.xmonad.enableContribAndExtras      = true;
     xserver.windowManager.xmonad.extraPackages               = haskellPackages: with haskellPackages; [ alsa-core alsa-mixer xmonad xmonad-contrib xmonad-extras ];
-    xserver.windowManager.xmonad.haskellPackages             = pkgs.haskell.packages.ghc865;
   };
 
   environment.systemPackages = with pkgs; [
