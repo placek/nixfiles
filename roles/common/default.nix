@@ -67,6 +67,7 @@
       vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
+          LanguageClient-neovim
           YouCompleteMe
           fzf-vim
           fzfWrapper
