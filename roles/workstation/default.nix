@@ -23,7 +23,6 @@
 
   environment.systemPackages = with pkgs; [
     avrdude
-    pkgsCross.avr.buildPackages.gcc
     dcc6502
     docker-compose
     ghostscript
@@ -31,7 +30,9 @@
     minipro
     moc
     neomutt
+    pkgsCross.avr.buildPackages.gcc
     projects
+    stack
     tiv
     todo
     usbutils

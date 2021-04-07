@@ -70,6 +70,7 @@
           YouCompleteMe
           fzf-vim
           fzfWrapper
+          haskell-vim
           nerdtree
           syntastic
           tabular
