@@ -3,7 +3,7 @@ show-password-label       = false
 invalid-password-text     = nope!
 show-input-cursor         = false
 password-alignment        = left
-password-input-width      = 12
+password-input-width      = 24
 
 [greeter-theme]
 font                      = "Iosevka"

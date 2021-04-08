@@ -13,7 +13,8 @@
 
   services = {
     acpid.enable                                             = true;
-    acpid.powerEventCommands                                 = "systemctl suspend";
+    acpid.powerEventCommands                                 = "systemctl start physlock";
+    acpid.lidEventCommands                                   = "systemctl start physlock";
     greenclip.enable                                         = true;
     logind.extraConfig                                       = "HandlePowerKey=ignore";
     physlock.enable                                          = true;
