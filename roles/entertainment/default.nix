@@ -6,6 +6,6 @@
     glxinfo
     libretro.mesen
     mesa
-    steam
+    wineWowPackages.stable
   ];
 }

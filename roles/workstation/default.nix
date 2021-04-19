@@ -47,8 +47,6 @@
     x-utils
     youtube-dl
 
-    haskellPackages.haskell-language-server
-
     (pass.withExtensions (ext: [ ext.pass-otp ]))
   ];
 }

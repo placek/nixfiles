@@ -43,7 +43,6 @@
     fzf
     git
     gnumake
-    haskellPackages.mustache
     imagemagick7
     inxi
     ncdu
@@ -61,6 +60,10 @@
     unzip
     vifm-full
     wget
+
+    haskellPackages.haskell-language-server
+    haskellPackages.hasktags
+    haskellPackages.mustache
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";

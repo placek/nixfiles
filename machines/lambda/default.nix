@@ -32,7 +32,8 @@
   boot.initrd.availableKernelModules                  = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules                           = [ "amdgpu" ];
   boot.kernelModules                                  = [ "kvm-intel" ];
-  boot.kernelPackages                                 = pkgs.linuxPackages_5_4;
+  boot.kernelPackages                                 = pkgs.linuxPackages_5_11;
+  boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
   boot.loader.efi.canTouchEfiVariables                = true;
   boot.loader.systemd-boot.enable                     = true;
   hardware.bluetooth.enable                           = true;
@@ -40,7 +41,7 @@
   hardware.facetimehd.enable                          = true;
   hardware.opengl.driSupport                          = true;
   hardware.opengl.enable                              = true;
-  hardware.opengl.extraPackages                       = [ pkgs.vaapiIntel ];
+  hardware.opengl.extraPackages                       = [ pkgs.amdvlk pkgs.rocm-opencl-icd pkgs.rocm-opencl-runtime ];
   hardware.pulseaudio.enable                          = true;
   hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
@@ -52,9 +53,9 @@
   powerManagement.cpuFreqGovernor                     = lib.mkDefault "powersave";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
-  services.mbpfan.highTemp                            = 64;
-  services.mbpfan.lowTemp                             = 61;
-  services.mbpfan.maxTemp                             = 84;
+  services.mbpfan.highTemp                            = 75;
+  services.mbpfan.lowTemp                             = 65;
+  services.mbpfan.maxTemp                             = 85;
   services.xserver.libinput.enable                    = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
