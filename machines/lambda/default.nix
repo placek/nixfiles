@@ -53,9 +53,9 @@
   powerManagement.cpuFreqGovernor                     = lib.mkDefault "powersave";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
-  services.mbpfan.highTemp                            = 75;
-  services.mbpfan.lowTemp                             = 65;
-  services.mbpfan.maxTemp                             = 85;
+  services.mbpfan.highTemp                            = 70;
+  services.mbpfan.lowTemp                             = 60;
+  services.mbpfan.maxTemp                             = 80;
   services.xserver.libinput.enable                    = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
@@ -71,5 +71,6 @@
     libreoffice-fresh
     mplayer
     shotwell
+    slack
   ];
 }

@@ -36,7 +36,7 @@
     minipro
     moc
     neomutt
-    pkgsCross.avr.buildPackages.gcc
+    # pkgsCross.avr.buildPackages.gcc
     projects
     solargraph
     stack
