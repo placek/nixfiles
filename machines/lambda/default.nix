@@ -64,6 +64,7 @@
   users.users.placek.packages = with pkgs; [
     arduino
     blender
+    discord
     eagle
     fusuma
     gimp
@@ -71,6 +72,6 @@
     libreoffice-fresh
     mplayer
     shotwell
-    slack
+    vagrant
   ];
 }
