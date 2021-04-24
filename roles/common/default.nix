@@ -15,7 +15,7 @@
   services.printing.drivers                = [ pkgs.foo2zjs ];
   services.udev.packages                   = [ pkgs.yubikey-personalization ];
   system.autoUpgrade.allowReboot           = true;
-  system.autoUpgrade.channel               = https://nixos.org/channels/nixos-20.09;
+  system.autoUpgrade.channel               = https://nixos.org/channels/nixos-unstable;
   system.autoUpgrade.enable                = true;
   system.stateVersion                      = "21.03";
   time.timeZone                            = "Europe/Warsaw";

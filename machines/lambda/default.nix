@@ -30,7 +30,6 @@
 
   boot.extraModulePackages                            = [ ];
   boot.initrd.availableKernelModules                  = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules                           = [ "amdgpu" ];
   boot.kernelModules                                  = [ "kvm-intel" ];
   boot.kernelPackages                                 = pkgs.linuxPackages_5_11;
   boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
@@ -41,7 +40,7 @@
   hardware.facetimehd.enable                          = true;
   hardware.opengl.driSupport                          = true;
   hardware.opengl.enable                              = true;
-  hardware.opengl.extraPackages                       = [ pkgs.amdvlk pkgs.rocm-opencl-icd pkgs.rocm-opencl-runtime ];
+  hardware.opengl.extraPackages                       = with pkgs; [ rocm-opencl-icd rocm-opencl-runtime intel-compute-runtime ];
   hardware.pulseaudio.enable                          = true;
   hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
