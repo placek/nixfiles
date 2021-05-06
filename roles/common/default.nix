@@ -47,6 +47,7 @@
     inxi
     ncdu
     ngrok
+    nodejs
     openvpn
     pinentry-curses
     rclone
@@ -70,8 +71,7 @@
       vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
-          LanguageClient-neovim
-          YouCompleteMe
+          coc-nvim
           fzf-vim
           fzfWrapper
           haskell-vim
