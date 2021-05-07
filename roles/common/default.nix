@@ -52,8 +52,10 @@
     pinentry-curses
     rclone
     rsync
+    ruby
     sc
     silver-searcher
+    solargraph
     stow
     tig
     tmux
@@ -72,6 +74,8 @@
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
           coc-nvim
+          coc-snippets
+          coc-solargraph
           fzf-vim
           fzfWrapper
           haskell-vim
