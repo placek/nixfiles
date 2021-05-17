@@ -73,6 +73,7 @@
       vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
+          coc-fzf
           coc-nvim
           coc-snippets
           coc-solargraph
