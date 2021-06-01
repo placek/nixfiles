@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation rec {
   name = "projects-${version}";
-  version = "4e28e3";
+  version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";

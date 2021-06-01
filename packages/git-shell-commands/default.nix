@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation rec {
   name    = "git-shell-commands-${version}";
-  version = "c948b8";
+  version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitHub {
     owner  = "placek";

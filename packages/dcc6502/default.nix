@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation rec {
   pname   = "dcc6502-${version}";
-  version = "680c21";
+  version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitHub {
     owner  = "tcarmelveilleux";
