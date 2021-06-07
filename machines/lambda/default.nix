@@ -66,7 +66,6 @@
     blender
     discord
     eagle
-    fusuma
     gimp
     inkscape
     libreoffice-fresh

@@ -33,6 +33,7 @@
     docker-compose
     ghostscript
     google-fonts
+    jq
     minipro
     moc
     neomutt
