@@ -5,7 +5,7 @@
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
   fonts.fontconfig.defaultFonts.sansSerif = [ "Ubuntu" ];
   fonts.fontconfig.defaultFonts.serif     = [ "Ubuntu" ];
-  fonts.fonts                             = [ pkgs.iosevka-bin pkgs.ubuntu_font_family ];
+  fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts ];
 
   nixpkgs.config.packageOverrides = pkgs: rec {
     wallpapers = pkgs.callPackage ../../packages/wallpapers {};
@@ -33,7 +33,7 @@
     arandr
     dunst
     feh
-    google-chrome-beta
+    # google-chrome-beta
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras

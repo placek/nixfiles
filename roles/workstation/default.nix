@@ -32,11 +32,11 @@
     dcc6502
     docker-compose
     ghostscript
-    google-fonts
     jq
     minipro
     moc
     neomutt
+    nix-prefetch-git
     # pkgsCross.avr.buildPackages.gcc
     projects
     solargraph
