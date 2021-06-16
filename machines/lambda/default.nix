@@ -60,6 +60,10 @@
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
   services.xserver.libinput.touchpad.tapping          = false;
+  services.xserver.resolutions                        = [
+    { x = 1920; y = 1200; }
+    { x = 1920; y = 1080; }
+  ];
 
   users.users.placek.packages = with pkgs; [
     arduino

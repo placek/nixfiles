@@ -40,7 +40,6 @@
     # pkgsCross.avr.buildPackages.gcc
     projects
     solargraph
-    stack
     tiv
     todo
     usbutils
