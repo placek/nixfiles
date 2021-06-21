@@ -33,7 +33,6 @@
     arandr
     dunst
     feh
-    # google-chrome-beta
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras

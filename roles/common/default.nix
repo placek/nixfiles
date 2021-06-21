@@ -49,12 +49,11 @@
     ngrok
     nodejs
     openvpn
-    pinentry-curses
     rclone
+    ripgrep
     rsync
     ruby
     sc
-    silver-searcher
     solargraph
     stow
     tig

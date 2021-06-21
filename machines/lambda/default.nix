@@ -72,7 +72,6 @@
     eagle
     gimp
     inkscape
-    libreoffice-fresh
     mplayer
     shotwell
     vagrant

@@ -38,6 +38,7 @@
     neomutt
     nix-prefetch-git
     # pkgsCross.avr.buildPackages.gcc
+    pinentry-curses
     projects
     solargraph
     tiv
