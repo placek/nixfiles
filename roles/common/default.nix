@@ -81,10 +81,12 @@
           haskell-vim
           nerdtree
           syntastic
+          tabular
           ultisnips
           vim-airline
           vim-airline-themes
           vim-fugitive
+          vim-mundo
         ];
       };
     })
