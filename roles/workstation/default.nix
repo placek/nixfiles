@@ -5,6 +5,7 @@
   powerManagement.enable                = true;
   programs.gnupg.agent.enable           = true;
   programs.gnupg.agent.enableSSHSupport = true;
+  programs.gnupg.agent.pinentryFlavor   = "qt";
   programs.ssh.startAgent               = false;
   sound.enable                          = true;
   virtualisation.docker.autoPrune.dates = "daily";
