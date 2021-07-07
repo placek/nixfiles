@@ -72,6 +72,7 @@
     fish
     fzf
     git
+    ghc
     gnumake
     imagemagick7
     inxi
@@ -95,6 +96,7 @@
     haskellPackages.haskell-language-server
     haskellPackages.hasktags
     haskellPackages.mustache
+    haskellPackages.ghcid
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";

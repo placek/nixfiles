@@ -31,7 +31,8 @@
   boot.extraModulePackages                            = [ ];
   boot.initrd.availableKernelModules                  = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules                           = [ "amdgpu" ];
-  boot.kernelModules                                  = [ "kvm-intel" ];
+  boot.kernelModules                                  = [ "kvm-intel" "i915" ];
+  hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
   boot.kernelPackages                                 = pkgs.linuxPackages_5_11;
   boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
   boot.loader.efi.canTouchEfiVariables                = true;
@@ -41,7 +42,7 @@
   hardware.facetimehd.enable                          = true;
   hardware.opengl.driSupport                          = true;
   hardware.opengl.enable                              = true;
-  hardware.opengl.extraPackages                       = [ pkgs.amdvlk pkgs.rocm-opencl-icd pkgs.rocm-opencl-runtime ];
+  hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel vaapiVdpau libvdpau-va-gl intel-media-driver ];
   hardware.pulseaudio.enable                          = true;
   hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
@@ -50,7 +51,7 @@
   networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];
   networking.firewall.enable                          = true;
   networking.hostName                                 = "lambda";
-  powerManagement.cpuFreqGovernor                     = lib.mkDefault "powersave";
+  powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
   services.mbpfan.highTemp                            = 70;
