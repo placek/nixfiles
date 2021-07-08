@@ -28,11 +28,8 @@ stdenv.mkDerivation rec {
     installShellCompletion --bash ./bash_completion.d/minipro
   '';
 
-  meta = with stdenv.lib; {
+  meta = {
     description = "An open source program for controlling the MiniPRO TL866xx series of chip programmers";
     homepage = "https://gitlab.com/DavidGriffith/minipro";
-    maintainers = with maintainers; [ kalium ];
-    license = licenses.gpl3;
-    platforms = platforms.linux;
   };
 }
