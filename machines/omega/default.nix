@@ -64,10 +64,10 @@ in
     services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
     services.xserver.libinput.touchpad.tapping          = false;
     services.xserver.resolutions                        = [ { x = 1920; y = 1080; } ];
-    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" "modesetting" ];
+    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" ];
 
     hardware.nvidia.prime = {
-      offload.enable = lib.mkDefault true;
+      sync.enable = lib.mkDefault true;
       intelBusId  = "PCI:0:2:0";
       nvidiaBusId = "PCI:1:0:0";
     };
