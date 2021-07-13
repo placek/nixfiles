@@ -32,6 +32,7 @@
     avrdude
     dcc6502
     docker-compose
+    gcalcli
     ghostscript
     jq
     minipro
