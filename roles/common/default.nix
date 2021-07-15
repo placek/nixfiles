@@ -76,6 +76,8 @@
     gnumake
     imagemagick7
     inxi
+    jmtpfs
+    lsd
     ncdu
     ngrok
     nodejs
