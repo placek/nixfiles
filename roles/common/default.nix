@@ -1,14 +1,25 @@
 { config, pkgs, ... }:
 {
-  boot.cleanTmpDir                         = true;
-  boot.consoleLogLevel                     = 0;
-  boot.supportedFilesystems                = [ "ntfs" ];
-  console.keyMap                           = "pl";
-  i18n.defaultLocale                       = "pl_PL.UTF-8";
-  nix.gc.automatic                         = true;
-  nix.gc.options                           = "--delete-older-than 7d";
-  nix.useSandbox                           = true;
-  nixpkgs.config.allowUnfree               = true;
+  boot.cleanTmpDir               = true;
+  boot.consoleLogLevel           = 0;
+  boot.supportedFilesystems      = [ "ntfs" ];
+  console.keyMap                 = "pl";
+  i18n.defaultLocale             = "pl_PL.UTF-8";
+  nix.gc.automatic               = true;
+  nix.gc.options                 = "--delete-older-than 7d";
+  nix.useSandbox                 = true;
+  nixpkgs.config.allowUnfree     = true;
+  services.cron.enable           = true;
+  services.pcscd.enable          = true;
+  services.printing.enable       = true;
+  services.printing.drivers      = [ pkgs.foo2zjs ];
+  services.udev.packages         = [ pkgs.yubikey-personalization ];
+  system.autoUpgrade.allowReboot = true;
+  system.autoUpgrade.channel     = https://nixos.org/channels/nixos-20.09;
+  system.autoUpgrade.enable      = true;
+  system.stateVersion            = "21.05";
+  time.timeZone                  = "Europe/Warsaw";
+
   programs.tmux = {
     enable           = true;
     aggressiveResize = true;
@@ -39,16 +50,6 @@
       set-window-option -g window-status-format " #I #W "
     '';
   };
-  services.cron.enable                     = true;
-  services.pcscd.enable                    = true;
-  services.printing.enable                 = true;
-  services.printing.drivers                = [ pkgs.foo2zjs ];
-  services.udev.packages                   = [ pkgs.yubikey-personalization ];
-  system.autoUpgrade.allowReboot           = true;
-  system.autoUpgrade.channel               = https://nixos.org/channels/nixos-20.09;
-  system.autoUpgrade.enable                = true;
-  system.stateVersion                      = "21.05";
-  time.timeZone                            = "Europe/Warsaw";
 
   nixpkgs.config.packageOverrides = pkgs: rec {
     dotfiles = pkgs.callPackage ../../packages/dotfiles {};
