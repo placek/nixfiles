@@ -7,8 +7,8 @@ pkgs.stdenv.mkDerivation rec {
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "projects";
-    rev    = "54513be610572ba42555c950d45aa9b5e70816fd";
-    sha256 = "1nmcipl59r9c7m1cz4zzs43cswvji9pd84rh0rccp8y1yvwnfn8q";
+    rev    = "1404b378cbcff6b6e5c47e104dd57c4f9b564389";
+    sha256 = "0wa9jrsbj3fl0jqaqykqmph0k5jm0g3xax3m4fhgwpscvmh4qkgz";
   };
 
   buildInputs = [];
