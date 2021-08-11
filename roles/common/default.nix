@@ -106,6 +106,7 @@
       vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         start = [
+          ale
           coc-fzf
           coc-nvim
           coc-snippets
@@ -113,7 +114,6 @@
           fzf-vim
           fzfWrapper
           haskell-vim
-          syntastic
           tabular
           ultisnips
           vim-airline
