@@ -105,7 +105,7 @@
       name = "vim";
       vimrcConfig.customRC = "source $HOME/.vimrc";
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [
+        opt = [
           ale
           coc-fzf
           coc-nvim
