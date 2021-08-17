@@ -99,7 +99,6 @@
     haskellPackages.haskell-language-server
     haskellPackages.hasktags
     haskellPackages.mustache
-    haskellPackages.ghcid
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";
@@ -107,19 +106,10 @@
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         opt = [
           ale
-          coc-fzf
-          coc-nvim
-          coc-snippets
-          coc-solargraph
           fzf-vim
           fzfWrapper
           haskell-vim
           tabular
-          ultisnips
-          vim-airline
-          vim-airline-themes
-          vim-fugitive
-          vim-mundo
         ];
       };
     })

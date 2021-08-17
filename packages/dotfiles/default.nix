@@ -7,8 +7,8 @@ pkgs.stdenv.mkDerivation rec {
   src = pkgs.fetchFromGitHub {
     owner  = "placek";
     repo   = "dotfiles";
-    rev    = "471f9aa1c174cca9d813a596a34f7bd7dee8fe7c";
-    sha256 = "05ddsqhbk942nqlwfv8qv3b6x3j3br6xf65zvgz61gcjh0mhajy0";
+    rev    = "33b599b68c0b5c803325c3ad3be88174e3ff20f3";
+    sha256 = "14s10lsss5m4pnc36glz8p3v2gfkscas2argid9nrjncl0n5pmi4";
   };
 
   buildInputs  = [ pkgs.haskellPackages.mustache ];
