@@ -62,7 +62,7 @@
     bat
     bc
     cryptsetup
-    ctags
+    universal-ctags
     curl
     dotfiles
     ed
