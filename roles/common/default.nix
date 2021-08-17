@@ -102,7 +102,23 @@
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";
-      vimrcConfig.customRC = "source $HOME/.vimrc";
+      vimrcConfig.customRC = ''
+        filetype plugin indent on
+        syntax enable
+
+        set exrc
+        set hidden
+        set hlsearch
+        set incsearch
+        set nocompatible
+        set path+=**
+        set secure
+        set splitbelow
+        set splitright
+        set wildmenu
+
+        source $HOME/.vimrc
+      '';
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         opt = [
           ale
