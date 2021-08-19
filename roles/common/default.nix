@@ -115,6 +115,7 @@
         set secure
         set splitbelow
         set splitright
+        set tags+=.git/tags;
         set wildmenu
 
         source $HOME/.vimrc
