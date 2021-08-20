@@ -127,6 +127,7 @@
           fzfWrapper
           haskell-vim
           tabular
+          vim-gitgutter
         ];
       };
     })
