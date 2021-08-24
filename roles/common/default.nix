@@ -53,7 +53,6 @@
 
   nixpkgs.config.packageOverrides = pkgs: rec {
     dotfiles = pkgs.callPackage ../../packages/dotfiles {};
-    sc       = pkgs.callPackage ../../packages/sc {};
   };
 
   environment.systemPackages = with pkgs; [
@@ -87,7 +86,6 @@
     ripgrep
     rsync
     ruby
-    sc
     solargraph
     stow
     tig

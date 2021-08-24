@@ -14,10 +14,7 @@
   nixpkgs.config.packageOverrides = pkgs: rec {
     dcc6502  = pkgs.callPackage ../../packages/dcc6502 {};
     minipro  = pkgs.callPackage ../../packages/minipro {};
-    projects = pkgs.callPackage ../../packages/projects {};
-    todo     = pkgs.callPackage ../../packages/todo {};
     vasm     = pkgs.callPackage ../../packages/vasm {};
-    x-utils  = pkgs.callPackage ../../packages/x-utils {};
   };
 
   # plutus binary cache
@@ -41,13 +38,10 @@
     nix-prefetch-git
     # pkgsCross.avr.buildPackages.gcc
     pinentry-curses
-    projects
     solargraph
     tiv
-    todo
     usbutils
     vasm
-    x-utils
     youtube-dl
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
