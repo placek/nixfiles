@@ -44,6 +44,7 @@
     rofi
     rofi-pass
     scrot
+    spotify
     wallpapers
     xclip
     xdotool
