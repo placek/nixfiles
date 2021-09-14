@@ -4,6 +4,7 @@
   boot.consoleLogLevel           = 0;
   boot.supportedFilesystems      = [ "ntfs" ];
   console.keyMap                 = "pl";
+  hardware.keyboard.zsa.enable   = true;
   i18n.defaultLocale             = "pl_PL.UTF-8";
   nix.gc.automatic               = true;
   nix.gc.options                 = "--delete-older-than 7d";
@@ -92,6 +93,7 @@
     unrar
     unzip
     vifm-full
+    wally-cli
     wget
 
     haskellPackages.haskell-language-server
