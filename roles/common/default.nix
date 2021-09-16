@@ -68,7 +68,7 @@
     ed
     entr
     fd
-    ffmpeg
+    ffmpeg-full
     file
     fish
     fzf
