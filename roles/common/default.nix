@@ -80,6 +80,7 @@
     jmtpfs
     lsd
     ncdu
+    netpbm
     ngrok
     nodejs
     openvpn
