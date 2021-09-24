@@ -130,6 +130,7 @@
           tabular
           vim-fugitive
           vim-gitgutter
+          vim-markdown
         ];
       };
     })
