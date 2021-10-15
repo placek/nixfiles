@@ -128,6 +128,7 @@
           fzfWrapper
           haskell-vim
           tabular
+          vim-expand-region
           vim-fugitive
           vim-gitgutter
           vim-markdown
