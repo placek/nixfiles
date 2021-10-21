@@ -127,6 +127,7 @@
           fzf-vim
           fzfWrapper
           haskell-vim
+          supertab
           tabular
           vim-expand-region
           vim-fugitive
