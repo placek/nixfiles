@@ -13,4 +13,4 @@ cp -vr $source_dir/packages /etc/nixos/
 cp -vr $source_dir/roles /etc/nixos/
 cp -vr $source_dir/users /etc/nixos/
 cp -vr $source_dir/hardware /etc/nixos/
-nixos-rebuild -j 4 switch
+nixos-rebuild -j 8 switch
