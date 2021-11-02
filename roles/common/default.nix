@@ -90,6 +90,7 @@
     ruby
     solargraph
     stow
+    thefuck
     tig
     unrar
     unzip
