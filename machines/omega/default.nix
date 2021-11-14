@@ -72,6 +72,13 @@ in
       nvidiaBusId = "PCI:1:0:0";
     };
 
+    environment.variables = {
+      EDITOR         = "vim";
+      VISUAL         = "vim";
+      SYMBOL         = "ω";
+      WIFI_INTERFACE = "wlp4s0";
+    };
+
     users.users.placek.packages = with pkgs; [
       arduino
       blender

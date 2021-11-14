@@ -66,6 +66,13 @@
     { x = 1920; y = 1080; }
   ];
 
+  environment.variables = {
+    EDITOR         = "vim";
+    VISUAL         = "vim";
+    SYMBOL         = "λ";
+    WIFI_INTERFACE = "wlp4s0";
+  };
+
   users.users.placek.packages = with pkgs; [
     arduino
     blender
