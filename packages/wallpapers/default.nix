@@ -1,8 +1,8 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  name = "wallpapers-${version}";
-  version = "a341d5";
+  pname   = "wallpapers";
+  version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitLab {
     owner  = "dwt1";

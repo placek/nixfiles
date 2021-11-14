@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  pname   = "dcc6502-${version}";
+  pname   = "dcc6502";
   version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitHub {

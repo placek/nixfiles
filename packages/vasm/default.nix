@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  name    = "vasm";
+  pname   = "vasm";
   version = "1.8j";
 
   src = pkgs.fetchFromGitHub {

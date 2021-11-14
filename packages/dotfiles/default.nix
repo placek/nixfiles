@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
-  name    = "dotfiles-${version}";
+  pname   = "dotfiles";
   version = builtins.substring 0 6 src.rev;
 
   src = pkgs.fetchFromGitHub {
