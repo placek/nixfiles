@@ -56,6 +56,11 @@
     dotfiles = pkgs.callPackage ../../packages/dotfiles {};
   };
 
+  environment.variables = {
+    EDITOR = "vim";
+    VISUAL = "vim";
+  };
+
   environment.systemPackages = with pkgs; [
     aria
     bash

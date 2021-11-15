@@ -73,10 +73,7 @@ in
     };
 
     environment.variables = {
-      EDITOR         = "vim";
-      VISUAL         = "vim";
-      SYMBOL         = "ω";
-      WIFI_INTERFACE = "wlp4s0";
+      SYMBOL = "ω";
     };
 
     users.users.placek.packages = with pkgs; [
