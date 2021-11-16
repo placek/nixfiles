@@ -4,7 +4,7 @@ script_dir=$(dirname $0)
 source_dir=$(dirname $script_dir)
 
 if [ $(id -u) -ne 0 ]; then
-  >&2 echo "rebuild-nix: not running as root"
+  >&2 echo "$0: not running as root"
   exit 1
 fi
 

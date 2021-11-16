@@ -1,0 +1,10 @@
+{
+  "url": "https://github.com/placek/dotfiles.git",
+  "rev": "215962162c42283cdf16dcc97b243559ae45ea85",
+  "date": "2021-11-16T12:44:16+01:00",
+  "path": "/nix/store/6r8fpzlzwslihap7rb2qxxh7bin55khc-dotfiles",
+  "sha256": "1zna1willyp4v04kbx0p8gjv72rrs6g839j8gnk87rk6h4dzxwr6",
+  "fetchSubmodules": false,
+  "deepClone": false,
+  "leaveDotGit": false
+}

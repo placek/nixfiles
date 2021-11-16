@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+dir=$1
+script_dir=$(dirname $0)
+source_dir=$(dirname $script_dir)
+
+if [ ! -d "$source_dir/packages/$dir" ]; then
+  >&2 echo "$0: no such project"
+  exit 1
+fi
+
+pushd "$source_dir/packages/$dir"
+  if [ ! -f "url" ]; then
+    >&2 echo "$0: no url info for package $dir"
+    exit 2
+  fi
+  rm -f "source.json"
+  nix-prefetch-git "$(cat url)" 2> /dev/null > "source.json"
+popd
