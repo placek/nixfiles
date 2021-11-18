@@ -5,10 +5,11 @@
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
   fonts.fontconfig.defaultFonts.sansSerif = [ "Ubuntu" ];
   fonts.fontconfig.defaultFonts.serif     = [ "Ubuntu" ];
-  fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts ];
+  fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts custom-fonts ];
 
   nixpkgs.config.packageOverrides = pkgs: rec {
-    wallpapers = pkgs.callPackage ../../packages/wallpapers {};
+    wallpapers   = pkgs.callPackage ../../packages/wallpapers {};
+    custom-fonts = pkgs.callPackage ../../packages/custom-fonts {};
   };
 
   services = {
