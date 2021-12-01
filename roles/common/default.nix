@@ -16,9 +16,9 @@
   services.printing.drivers      = [ pkgs.foo2zjs ];
   services.udev.packages         = [ pkgs.yubikey-personalization ];
   system.autoUpgrade.allowReboot = true;
-  system.autoUpgrade.channel     = https://nixos.org/channels/nixos-21.05;
+  system.autoUpgrade.channel     = https://nixos.org/channels/nixos-21.11;
   system.autoUpgrade.enable      = true;
-  system.stateVersion            = "21.05";
+  system.stateVersion            = "21.11";
   time.timeZone                  = "Europe/Warsaw";
 
   programs.tmux = {

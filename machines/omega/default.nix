@@ -85,7 +85,7 @@ in
       inkscape
       mplayer
       shotwell
-      steam
+      #steam
       vagrant
     ];
   }
