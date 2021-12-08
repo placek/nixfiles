@@ -34,7 +34,6 @@
     ghostscript
     glab
     jq
-    jira-cli
     minipro
     moc
     neomutt
