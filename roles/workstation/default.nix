@@ -37,9 +37,9 @@
     moc
     neomutt
     nix-prefetch-git
+    orca-c
     #pkgsCross.avr.buildPackages.gcc
     pinentry-curses
-    solargraph
     tiv
     usbutils
     vasm
