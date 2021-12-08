@@ -98,6 +98,7 @@
     stow
     thefuck
     tig
+    todoist
     unrar
     unzip
     vifm-full
