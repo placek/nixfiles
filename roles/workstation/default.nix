@@ -32,7 +32,9 @@
     dcc6502
     docker-compose
     ghostscript
+    glab
     jq
+    jira-cli
     minipro
     moc
     neomutt
