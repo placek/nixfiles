@@ -1,11 +1,11 @@
 { config, pkgs, ... }:
-
 {
   fonts.enableDefaultFonts                = true;
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
   fonts.fontconfig.defaultFonts.sansSerif = [ "Ubuntu" ];
   fonts.fontconfig.defaultFonts.serif     = [ "Ubuntu" ];
   fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts font-awesome custom-fonts ];
+  programs.slock.enable                   = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
     wallpapers   = pkgs.callPackage ../../packages/wallpapers {};
@@ -14,11 +14,8 @@
 
   services = {
     acpid.enable                                             = true;
-    acpid.powerEventCommands                                 = "systemctl start physlock";
-    acpid.lidEventCommands                                   = "systemctl start physlock";
     greenclip.enable                                         = true;
     logind.extraConfig                                       = "HandlePowerKey=ignore";
-    physlock.enable                                          = true;
     xserver.displayManager.defaultSession                    = "none+xmonad";
     xserver.displayManager.lightdm.enable                    = true;
     xserver.displayManager.lightdm.greeters.mini.enable      = true;
