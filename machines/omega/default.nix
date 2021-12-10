@@ -56,6 +56,7 @@ in
     networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];
     networking.firewall.enable                          = true;
     networking.hostName                                 = "omega";
+    networking.wlanInterfaces.wlan0                     = { device = "wlp82s0"; mac = "01:00:00:00:00:01"; };
     powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
     programs.light.enable                               = true;
     services.throttled.enable                           = lib.mkDefault true;

@@ -1,5 +1,4 @@
 { config, lib, pkgs, modulesPath, ... }:
-
 {
   imports = [
     (modulesPath + "/hardware/network/broadcom-43xx.nix")
@@ -13,6 +12,7 @@
     ../../roles/entertainment
     ../../roles/workstation
     ../../roles/xserver
+
     ../../users/placek.nix
   ];
 
@@ -51,6 +51,7 @@
   networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];
   networking.firewall.enable                          = true;
   networking.hostName                                 = "lambda";
+  networking.wlanInterfaces.wlan0                     = { device = "wlp4s0"; mac = "01:00:00:00:00:01"; };
   powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
