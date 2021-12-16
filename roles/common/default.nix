@@ -69,6 +69,7 @@
     cryptsetup
     universal-ctags
     curl
+    direnv
     dotfiles
     ed
     entr
