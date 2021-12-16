@@ -21,6 +21,14 @@
   system.stateVersion            = "21.11";
   time.timeZone                  = "Europe/Warsaw";
 
+  # flakes
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+   };
+
   programs.tmux = {
     enable           = true;
     aggressiveResize = true;
