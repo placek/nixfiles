@@ -26,6 +26,8 @@
     package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
     '';
    };
 
@@ -69,6 +71,10 @@
     VISUAL = "vim";
   };
 
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
+
   environment.systemPackages = with pkgs; [
     aria
     bash
@@ -96,6 +102,7 @@
     ncdu
     netpbm
     ngrok
+    nix-direnv
     nodejs
     openvpn
     rclone

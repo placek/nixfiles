@@ -1,9 +1,9 @@
 {
   "url": "https://github.com/placek/dotfiles.git",
-  "rev": "bfb88a3b1ae38e07d21ae17c0294bfc02e9291e7",
-  "date": "2021-12-16T09:16:24+01:00",
-  "path": "/nix/store/xm2hcv7gh8dxknxdd0bkkpi6qjqhnwy0-dotfiles",
-  "sha256": "14bk0qc0vvqhjsg749zg84zpyc3zhr1dqhj2ypmcwhj0yya9ybqp",
+  "rev": "ff4285287cf16cb40c5c1b3c4f0294e6af56d133",
+  "date": "2021-12-17T11:36:58+01:00",
+  "path": "/nix/store/vx174cl083719dvkq73zj4yac38nr5g2-dotfiles",
+  "sha256": "17sqxgqxbklvq202m3qrw3nc8zfn3y21yvsm501ph8pg0ryx94as",
   "fetchSubmodules": false,
   "deepClone": false,
   "leaveDotGit": false
