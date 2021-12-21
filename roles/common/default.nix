@@ -150,6 +150,8 @@
           fzf-vim
           fzfWrapper
           haskell-vim
+          nerdtree
+          nerdtree-git-plugin
           supertab
           tabular
           vim-expand-region
