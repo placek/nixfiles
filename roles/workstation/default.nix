@@ -32,7 +32,6 @@
     dcc6502
     docker-compose
     ghostscript
-    glab
     jq
     minipro
     moc

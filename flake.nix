@@ -2,7 +2,7 @@
   description = "The configuration flakes for my personal setup of NixOS";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/9e86f5f7a19db6da2445f07bafa6694b556f9c6d";
+    nixpkgs.url = "github:NixOS/nixpkgs/d235056d6d6dcbd2999bd55fd120d831d4df6304";
   };
 
   outputs = { self, nixpkgs, ... }: {

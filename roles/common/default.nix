@@ -110,7 +110,6 @@
     rlwrap
     rsync
     ruby
-    solargraph
     stow
     thefuck
     tig
