@@ -10,19 +10,10 @@ My NixOS configuration for various devices.
 * A **package** is a custom nix package.
 * A **hardware** is a definition of a device used by machine.
 
-### configuration.nix
+### apply configuration
 
 ```
-{ config, lib, pkgs, ... }:
-
-{
-  imports =
-    [
-      ./hardware-configuration.nix
-      ./machines/some-machine.nix
-      ./users/some-user.nix
-    ];
-}
+sudo rebuild-nix <target>
 ```
 
 ### contributing

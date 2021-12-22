@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-
 {
   networking.networkmanager.enable      = true;
   powerManagement.enable                = true;
@@ -12,7 +11,6 @@
   virtualisation.docker.enable          = true;
 
   nixpkgs.config.packageOverrides = pkgs: rec {
-    cbqn     = pkgs.callPackage ../../packages/cbqn {};
     dcc6502  = pkgs.callPackage ../../packages/dcc6502 {};
     minipro  = pkgs.callPackage ../../packages/minipro {};
     vasm     = pkgs.callPackage ../../packages/vasm {};
@@ -28,7 +26,6 @@
 
   environment.systemPackages = with pkgs; [
     avrdude
-    cbqn
     dcc6502
     docker-compose
     ghostscript
@@ -38,12 +35,13 @@
     neomutt
     nix-prefetch-git
     orca-c
-    #pkgsCross.avr.buildPackages.gcc
     pinentry-curses
     tiv
     usbutils
     vasm
     youtube-dl
+
+    #pkgsCross.avr.buildPackages.gcc
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
   ];
