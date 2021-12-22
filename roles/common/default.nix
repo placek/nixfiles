@@ -147,8 +147,8 @@
       '';
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         opt = [
-          coc-nvim
           coc-fzf
+          coc-nvim
           fzf-vim
           fzfWrapper
           haskell-vim
