@@ -130,6 +130,7 @@
         filetype plugin indent on
         syntax enable
 
+        set encoding=utf-8
         set exrc
         set hidden
         set hlsearch
@@ -146,18 +147,16 @@
       '';
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
         opt = [
-          ale
+          coc-nvim
+          coc-fzf
           fzf-vim
           fzfWrapper
           haskell-vim
           nerdtree
-          nerdtree-git-plugin
-          supertab
           tabular
           vim-expand-region
           vim-fugitive
-          vim-gitgutter
-          vim-markdown
+          vim-signature
         ];
       };
     })
