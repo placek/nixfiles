@@ -4,13 +4,8 @@
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
   fonts.fontconfig.defaultFonts.sansSerif = [ "Ubuntu" ];
   fonts.fontconfig.defaultFonts.serif     = [ "Ubuntu" ];
-  fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts font-awesome custom-fonts ];
+  fonts.fonts                             = with pkgs; [ iosevka-bin ubuntu_font_family google-fonts font-awesome custom.custom-fonts ];
   programs.slock.enable                   = true;
-
-  nixpkgs.config.packageOverrides = pkgs: rec {
-    wallpapers   = pkgs.callPackage ../../packages/wallpapers {};
-    custom-fonts = pkgs.callPackage ../../packages/custom-fonts {};
-  };
 
   services = {
     acpid.enable                                             = true;
@@ -28,6 +23,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    custom.wallpapers
+
     arandr
     dunst
     feh
@@ -43,7 +40,6 @@
     rofi-pass
     scrot
     spotify
-    wallpapers
     xclip
     xdotool
     xmobar
@@ -54,7 +50,7 @@
   system.userActivationScripts = {
     wallpapers = ''
       rm -rf $HOME/.wall
-      ln -s ${pkgs.wallpapers}/shared $HOME/.wall
+      ln -s ${pkgs.custom.wallpapers}/shared $HOME/.wall
       true
     '';
   };

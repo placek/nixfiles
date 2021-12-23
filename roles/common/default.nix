@@ -62,10 +62,6 @@
     '';
   };
 
-  nixpkgs.config.packageOverrides = pkgs: rec {
-    dotfiles = pkgs.callPackage ../../packages/dotfiles {};
-  };
-
   environment.variables = {
     EDITOR = "vim";
     VISUAL = "vim";
@@ -76,6 +72,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    custom.dotfiles
+
     aria
     bash
     bat
@@ -84,7 +82,6 @@
     universal-ctags
     curl
     direnv
-    dotfiles
     ed
     entr
     fd

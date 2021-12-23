@@ -10,12 +10,6 @@
   virtualisation.docker.autoPrune.dates = "daily";
   virtualisation.docker.enable          = true;
 
-  nixpkgs.config.packageOverrides = pkgs: rec {
-    dcc6502  = pkgs.callPackage ../../packages/dcc6502 {};
-    minipro  = pkgs.callPackage ../../packages/minipro {};
-    vasm     = pkgs.callPackage ../../packages/vasm {};
-  };
-
   # plutus binary cache
   nix = {
     binaryCaches          = [ "https://hydra.iohk.io" "https://iohk.cachix.org" ];
@@ -25,12 +19,14 @@
   services.acpid.enable = true;
 
   environment.systemPackages = with pkgs; [
+    custom.dcc6502
+    custom.minipro
+    custom.vasm
+
     avrdude
-    dcc6502
     docker-compose
     ghostscript
     jq
-    minipro
     moc
     neomutt
     nix-prefetch-git
@@ -38,7 +34,6 @@
     pinentry-curses
     tiv
     usbutils
-    vasm
     youtube-dl
 
     #pkgsCross.avr.buildPackages.gcc
