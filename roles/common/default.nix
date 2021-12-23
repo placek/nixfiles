@@ -157,4 +157,21 @@
       };
     })
   ];
+
+  system.userActivationScripts = {
+    dotfiless = ''
+      source_dir="${pkgs.custom.dotfiles}/share"
+      dotfiles_dir=$HOME/.config/dotfiles
+      target_dir=$HOME
+      rm -rf $dotfiles_dir
+      mkdir $dotfiles_dir
+      cp -rv $source_dir/* $dotfiles_dir
+      chmod -R +w $dotfiles_dir
+      for dir in $(find $source_dir/* -mindepth 1 -type d -printf "%P\n"); do
+        mkdir -p  $target_dir/$dir
+        chmod 700 $target_dir/$dir
+      done
+      true
+    '';
+  };
 }
