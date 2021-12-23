@@ -111,7 +111,6 @@
     rsync
     ruby
     stow
-    thefuck
     tig
     todoist
     unrar
