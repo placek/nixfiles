@@ -11,8 +11,8 @@
 
   outputs = { self, omega_nixpkgs, lambda_nixpkgs, dotfiles_flake, wallpapers_flake, fonts_flake, ... }:
     let
-      system = "x86_64-linux";
-      pkgs   = import omega_nixpkgs {
+      system      = "x86_64-linux";
+      pkgs_config = {
         inherit system;
         config.allowUnfree = true;
         config.packageOverrides = pkgs: rec {
@@ -28,12 +28,14 @@
     {
       nixosConfigurations = {
         omega = omega_nixpkgs.lib.nixosSystem {
-          inherit pkgs system;
+          inherit system;
+          pkgs    = import omega_nixpkgs pkgs_config;
           modules = [ ./machines/omega ];
         };
 
         lambda = lambda_nixpkgs.lib.nixosSystem {
-          inherit pkgs system;
+          inherit system;
+          pkgs    = import lambda_nixpkgs pkgs_config;
           modules = [ ./machines/lambda ];
         };
       };
