@@ -10,13 +10,21 @@ My NixOS configuration for various devices.
 * A **package** is a custom nix package.
 * A **hardware** is a definition of a device used by machine.
 
-### apply configuration
+### usage
+
+#### apply configuration
 
 ```
-sudo rebuild-nix <target>
+sudo nixfiles rebuild <target>
 ```
 
 Where current targets are: *lambda* and *omega*.
+
+#### update inputs
+
+```
+sudo nixfiles update
+```
 
 ### contributing
 

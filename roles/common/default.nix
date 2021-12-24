@@ -77,12 +77,10 @@
     aria
     bash
     bat
-    bc
     cryptsetup
     universal-ctags
     curl
     direnv
-    ed
     entr
     fd
     ffmpeg-full
@@ -90,23 +88,18 @@
     fish
     fzf
     git
-    ghc
-    gnumake
     imagemagick7
     inxi
     jmtpfs
     lsd
-    ncdu
     netpbm
     ngrok
     nix-direnv
-    nodejs
     openvpn
     rclone
     ripgrep
     rlwrap
     rsync
-    ruby
     stow
     tig
     todoist
@@ -115,10 +108,6 @@
     vifm-full
     wally-cli
     wget
-
-    haskellPackages.haskell-language-server
-    haskellPackages.hasktags
-    haskellPackages.mustache
 
     ((vim_configurable.override { python = python3; }).customize {
       name = "vim";
