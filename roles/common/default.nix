@@ -78,7 +78,6 @@
     bash
     bat
     cryptsetup
-    universal-ctags
     curl
     direnv
     entr
@@ -94,7 +93,8 @@
     lsd
     netpbm
     ngrok
-    nix-direnv
+    nix-direnv-flakes
+    nodejs
     openvpn
     rclone
     ripgrep
@@ -103,6 +103,7 @@
     stow
     tig
     todoist
+    universal-ctags
     unrar
     unzip
     vifm-full
@@ -131,13 +132,18 @@
         source $HOME/.vimrc
       '';
       vimrcConfig.packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [
+          haskell-vim
+          vim-fish
+          vim-nix
+          vim-css-color
+          direnv-vim
+        ];
         opt = [
           coc-fzf
           coc-nvim
           fzf-vim
           fzfWrapper
-          haskell-vim
-          nerdtree
           tabular
           vim-expand-region
           vim-fugitive

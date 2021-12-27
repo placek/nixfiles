@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1640345216,
-        "narHash": "sha256-TQfrmKkQ0szo+dR6syB2Ir8qbkemogHHPZ/FA3jsQpg=",
+        "lastModified": 1640640457,
+        "narHash": "sha256-XjTyrSDYae6BDq8rNthVKGHKv7IL2XBQVAqc5tcFwKs=",
         "owner": "placek",
         "repo": "dotfiles",
-        "rev": "b3a7fd0ff0fd4408e6e792b2c8007e6317d83649",
+        "rev": "4d1ba7469fb51d7016d89bf741ce255f598a2bd0",
         "type": "github"
       },
       "original": {
@@ -85,22 +85,6 @@
         "type": "github"
       }
     },
-    "lambda_nixpkgs": {
-      "locked": {
-        "lastModified": 1619057301,
-        "narHash": "sha256-1Y1nCnwGSQHM76KGIhz+8tOAGOT3wlP+dKjwoyQXCtg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d235056d6d6dcbd2999bd55fd120d831d4df6304",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "d235056d6d6dcbd2999bd55fd120d831d4df6304",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1636552551,
@@ -135,21 +119,21 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1636552551,
-        "narHash": "sha256-k7Hq/bvUnRlAfFjPGuw3FsSqqspQdRHsCHpgadw6UkQ=",
+        "lastModified": 1640572776,
+        "narHash": "sha256-pWMTubBy1Ep31iuQ5lEKW2mjSHWEvcbvy9uHVch2764=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9e86f5f7a19db6da2445f07bafa6694b556f9c6d",
+        "rev": "d887ac7aee92e8fc54dde9060d60d927afae9d69",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "9e86f5f7a19db6da2445f07bafa6694b556f9c6d",
+        "rev": "d887ac7aee92e8fc54dde9060d60d927afae9d69",
         "type": "github"
       }
     },
-    "omega_nixpkgs": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1636552551,
         "narHash": "sha256-k7Hq/bvUnRlAfFjPGuw3FsSqqspQdRHsCHpgadw6UkQ=",
@@ -169,15 +153,14 @@
       "inputs": {
         "dotfiles_flake": "dotfiles_flake",
         "fonts_flake": "fonts_flake",
-        "lambda_nixpkgs": "lambda_nixpkgs",
-        "omega_nixpkgs": "omega_nixpkgs",
+        "nixpkgs": "nixpkgs_3",
         "wallpapers_flake": "wallpapers_flake"
       }
     },
     "wallpapers_flake": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1640263061,

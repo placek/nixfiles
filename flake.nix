@@ -2,17 +2,16 @@
   description = "The configuration flakes for my personal setup of NixOS";
 
   inputs = {
-    omega_nixpkgs.url    = "github:NixOS/nixpkgs/9e86f5f7a19db6da2445f07bafa6694b556f9c6d";
-    lambda_nixpkgs.url   = "github:NixOS/nixpkgs/d235056d6d6dcbd2999bd55fd120d831d4df6304";
+    nixpkgs.url          = "github:NixOS/nixpkgs/d887ac7aee92e8fc54dde9060d60d927afae9d69";
     dotfiles_flake.url   = "github:placek/dotfiles/master";
     wallpapers_flake.url = "github:placek/wallpapers/master";
     fonts_flake.url      = "github:placek/custom-fonts/master";
   };
 
-  outputs = { self, omega_nixpkgs, lambda_nixpkgs, dotfiles_flake, wallpapers_flake, fonts_flake, ... }:
+  outputs = { self, nixpkgs, dotfiles_flake, wallpapers_flake, fonts_flake, ... }:
     let
-      system      = "x86_64-linux";
-      pkgs_config = {
+      system = "x86_64-linux";
+      pkgs   = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         config.packageOverrides = pkgs: rec {
@@ -27,15 +26,13 @@
     in
     {
       nixosConfigurations = {
-        omega = omega_nixpkgs.lib.nixosSystem {
-          inherit system;
-          pkgs    = import omega_nixpkgs pkgs_config;
+        omega = nixpkgs.lib.nixosSystem {
+          inherit pkgs system;
           modules = [ ./machines/omega ];
         };
 
-        lambda = lambda_nixpkgs.lib.nixosSystem {
-          inherit system;
-          pkgs    = import lambda_nixpkgs pkgs_config;
+        lambda = nixpkgs.lib.nixosSystem {
+          inherit pkgs system;
           modules = [ ./machines/lambda ];
         };
       };

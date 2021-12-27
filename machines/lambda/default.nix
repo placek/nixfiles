@@ -33,7 +33,7 @@
   boot.initrd.kernelModules                           = [ "amdgpu" ];
   boot.kernelModules                                  = [ "kvm-intel" "i915" ];
   hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
-  boot.kernelPackages                                 = pkgs.linuxPackages_5_11;
+  boot.kernelPackages                                 = pkgs.linuxKernel.packages.linux_5_15;
   boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
   boot.loader.efi.canTouchEfiVariables                = true;
   boot.loader.systemd-boot.enable                     = true;
