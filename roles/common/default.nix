@@ -154,9 +154,9 @@
   ];
 
   system.userActivationScripts = {
-    dotfiless = ''
-      source_dir="${pkgs.custom.dotfiles}/share"
+    dotfiles = ''
       dotfiles_dir=$HOME/.config/dotfiles
+      source_dir="${pkgs.custom.dotfiles}/share"
       target_dir=$HOME
       rm -rf $dotfiles_dir
       mkdir $dotfiles_dir
