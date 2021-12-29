@@ -36,8 +36,6 @@
     paper-icon-theme
     pinentry-qt
     qutebrowser
-    rofi
-    rofi-pass
     scrot
     spotify
     xclip
