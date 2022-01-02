@@ -1,4 +1,22 @@
 { config, pkgs, ... }:
+let
+  desktopApplications = with pkgs; [
+    arandr
+    arduino
+    blender
+    discord
+    eagle
+    gimp
+    inkscape
+    kitty
+    qutebrowser
+    shotwell
+    spotify
+    #steam
+    zathura
+  ];
+  copyScript = map (app: "cp " + app + "/share/applications/*.desktop $HOME/.local/share/applications/") desktopApplications;
+in
 {
   fonts.enableDefaultFonts                = true;
   fonts.fontconfig.defaultFonts.monospace = [ "Iosevka" ];
@@ -25,30 +43,32 @@
   environment.systemPackages = with pkgs; [
     custom.wallpapers
 
-    arandr
     dunst
     feh
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib
     haskellPackages.xmonad-extras
-    kitty
     libnotify
+    mplayer
     paper-icon-theme
     pinentry-qt
-    qutebrowser
     scrot
-    spotify
+    vagrant
     xclip
     xdotool
     xmobar
     xmonad-with-packages
-    zathura
-  ];
+  ] ++ desktopApplications;
 
   system.userActivationScripts = {
     wallpapers = ''
       rm -rf $HOME/.wall
       ln -s ${pkgs.custom.wallpapers}/shared $HOME/.wall
+      true
+    '';
+    desktopApplications = ''
+      rm -rf $HOME/.local/share/applications/*
+      ${builtins.concatStringsSep "\n" copyScript}
       true
     '';
   };

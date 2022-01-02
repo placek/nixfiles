@@ -70,16 +70,4 @@
   environment.variables = {
     SYMBOL = "λ";
   };
-
-  users.users.placek.packages = with pkgs; [
-    arduino
-    blender
-    discord
-    eagle
-    gimp
-    inkscape
-    mplayer
-    shotwell
-    vagrant
-  ];
 }
