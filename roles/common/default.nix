@@ -92,7 +92,6 @@
     jmtpfs
     lsd
     netpbm
-    ngrok
     nix-direnv-flakes
     nodejs
     openvpn
@@ -102,12 +101,10 @@
     rsync
     stow
     tig
-    todoist
     universal-ctags
     unrar
     unzip
     vifm-full
-    wally-cli
     wget
 
     ((vim_configurable.override { python = python3; }).customize {

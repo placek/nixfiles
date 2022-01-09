@@ -29,12 +29,15 @@
     jq
     moc
     neomutt
+    ngrok
     nix-prefetch-git
     orca-c
     pinentry-curses
     tiv
+    todoist
     usbutils
     youtube-dl
+    wally-cli
 
     #pkgsCross.avr.buildPackages.gcc
 
