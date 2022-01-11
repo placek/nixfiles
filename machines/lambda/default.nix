@@ -4,10 +4,6 @@
     (modulesPath + "/hardware/network/broadcom-43xx.nix")
     (modulesPath + "/installer/scan/not-detected.nix")
 
-    ../../hardware/usb/backup
-    ../../hardware/usb/cdrom
-    ../../hardware/usb/secret
-
     ../../roles/common
     ../../roles/entertainment
     ../../roles/workstation
