@@ -45,6 +45,7 @@
     qutebrowser
     scrot
     shotwell
+    slack
     spotify
     #steam
     vagrant

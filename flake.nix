@@ -15,6 +15,13 @@
         inherit system;
         config.allowUnfree = true;
         config.packageOverrides = pkgs: rec {
+          slock = pkgs.slock.override { conf = ''
+              static const char *user  = "nobody";
+              static const char *group = "nogroup";
+              static const int failonclear = 1;
+              static const char *colorname[NUMCOLS] = { [INIT] = "#32302f", [INPUT] = "#fe8019", [FAILED] = "#fb4934" };
+            '';
+          };
           custom.dotfiles     = dotfiles_flake.defaultPackage.x86_64-linux;
           custom.wallpapers   = wallpapers_flake.defaultPackage.x86_64-linux;
           custom.custom-fonts = fonts_flake.defaultPackage.x86_64-linux;
