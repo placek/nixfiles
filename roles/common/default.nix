@@ -109,50 +109,44 @@
   ];
 
   programs.neovim = {
-    enable             = true;
-    defaultEditor      = true;
-    viAlias            = true;
-    vimAlias           = true;
-    configure.customRC = ''
-      filetype plugin indent on
-      syntax enable
-
-      set encoding=utf-8
-      set exrc
-      set hidden
-      set hlsearch
-      set incsearch
-      set nocompatible
-      set path+=**
-
-      set splitright
-      set tags+=.git/tags;
-      set wildmenu
-
-      source $HOME/.vimrc
-    '';
-    configure.packages.nix = with pkgs.vimPlugins; {
-      start = [
-        comment-nvim
-        direnv-vim
-        git-blame-nvim
-        haskell-vim
-        lualine-nvim
-        tabular
-        vim-css-color
-        vim-expand-region
-        vim-fish
-        vim-fugitive
-        vim-nix
-        vim-signature
-        vim-surround
-      ];
-      opt = [
-        coc-fzf
-        coc-nvim
-        fzf-vim
-        fzfWrapper
-      ];
+    enable        = true;
+    defaultEditor = true;
+    viAlias       = true;
+    vimAlias      = true;
+    configure     = {
+      customRC = ''
+        set runtimepath^=~/.vim
+        let &packpath = &runtimepath
+        source ~/.vimrc
+        luafile ~/.vim/lua/nvim.lua
+      '';
+      packages.nix = with pkgs.vimPlugins; {
+        start = [
+          cmp-buffer
+          cmp-cmdline
+          cmp-nvim-lsp
+          cmp-path
+          cmp-tabnine
+          comment-nvim
+          direnv-vim
+          gitsigns-nvim
+          haskell-vim
+          lualine-nvim
+          luasnip
+          nvim-cmp
+          nvim-lspconfig
+          tabular
+          telescope-fzy-native-nvim
+          telescope-nvim
+          vim-css-color
+          vim-expand-region
+          vim-fish
+          vim-nix
+          vim-signature
+          vim-surround
+          which-key-nvim
+        ];
+      };
     };
   };
 
