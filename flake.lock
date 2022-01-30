@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1643540365,
-        "narHash": "sha256-VFF4dmp+nWOe0p1kZeRUWwtfox7iVuQPYJiGHL+yYGc=",
+        "lastModified": 1643570363,
+        "narHash": "sha256-3yoIN+10RZ6cQldD8WjkZB3Rf8Y16DV2g/qFd53rNgI=",
         "owner": "placek",
         "repo": "dotfiles",
-        "rev": "6945173ee9f28a2f6eee70c9cf923526aaad3606",
+        "rev": "188ccc893d67b6b69d2098de69aa5329b75b5fa0",
         "type": "github"
       },
       "original": {
