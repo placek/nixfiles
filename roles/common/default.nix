@@ -95,6 +95,7 @@
     nix-direnv-flakes
     nodejs
     openvpn
+    openssl
     rclone
     ripgrep
     rlwrap

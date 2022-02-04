@@ -28,9 +28,12 @@ in
   hardware.opengl.driSupport32Bit = true;
 
   environment.systemPackages = with pkgs; [
+    #steam
+    brogue
     glxinfo
     libretro.mesen
     mesa
+    minecraft
     wineWowPackages.stable
 
     wine-rome-total-war

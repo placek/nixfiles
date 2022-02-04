@@ -42,12 +42,12 @@
     mplayer
     paper-icon-theme
     pinentry-qt
+    qcad
     qutebrowser
     scrot
     shotwell
     slack
     spotify
-    #steam
     vagrant
     xclip
     xdotool
