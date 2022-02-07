@@ -24,10 +24,8 @@
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
-  boot.extraModulePackages                            = [ ];
   boot.initrd.availableKernelModules                  = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules                           = [ "amdgpu" ];
-  boot.kernelModules                                  = [ "kvm-intel" "i915" ];
+  boot.kernelModules                                  = [ "kvm-intel" ];
   hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
   boot.kernelPackages                                 = pkgs.linuxKernel.packages.linux_5_15;
   boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
@@ -38,11 +36,11 @@
   hardware.facetimehd.enable                          = true;
   hardware.opengl.driSupport                          = true;
   hardware.opengl.enable                              = true;
-  hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel vaapiVdpau libvdpau-va-gl intel-media-driver ];
+  hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel ];
   hardware.pulseaudio.enable                          = true;
   hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
-  hardware.video.hidpi.enable                         = lib.mkDefault true;
+  hardware.video.hidpi.enable                         = lib.mkDefault false;
   networking.firewall.allowPing                       = false;
   networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];
   networking.firewall.enable                          = true;
