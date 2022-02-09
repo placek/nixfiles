@@ -131,6 +131,7 @@
           comment-nvim
           direnv-vim
           gitsigns-nvim
+          vim-gruvbox8
           haskell-vim
           lualine-nvim
           luasnip
