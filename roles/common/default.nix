@@ -128,10 +128,11 @@
           cmp-nvim-lsp
           cmp-path
           cmp-tabnine
+          cmp_luasnip
           comment-nvim
           direnv-vim
+          friendly-snippets
           gitsigns-nvim
-          vim-gruvbox8
           haskell-vim
           lualine-nvim
           luasnip
@@ -143,6 +144,7 @@
           vim-css-color
           vim-expand-region
           vim-fish
+          vim-gruvbox8
           vim-nix
           vim-signature
           vim-surround
