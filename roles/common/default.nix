@@ -94,8 +94,8 @@
     netpbm
     nix-direnv-flakes
     nodejs
-    openvpn
     openssl
+    openvpn
     rclone
     ripgrep
     rlwrap
@@ -144,6 +144,7 @@
           vim-css-color
           vim-expand-region
           vim-fish
+          vim-fugitive
           vim-gruvbox8
           vim-nix
           vim-signature
