@@ -123,12 +123,17 @@
       '';
       packages.nix = with pkgs.vimPlugins; {
         start = [
-          cmp-buffer
-          cmp-cmdline
+          nvim-cmp
           cmp-nvim-lsp
-          cmp-path
           cmp-tabnine
           cmp_luasnip
+          cmp-buffer
+          cmp-cmdline
+          cmp-path
+
+          telescope-nvim
+          telescope-fzy-native-nvim
+
           comment-nvim
           direnv-vim
           friendly-snippets
@@ -136,11 +141,8 @@
           haskell-vim
           lualine-nvim
           luasnip
-          nvim-cmp
           nvim-lspconfig
           tabular
-          telescope-fzy-native-nvim
-          telescope-nvim
           vim-css-color
           vim-expand-region
           vim-fish
