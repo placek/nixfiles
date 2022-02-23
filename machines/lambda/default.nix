@@ -46,11 +46,11 @@
   networking.firewall.enable                          = true;
   networking.hostName                                 = "lambda";
   networking.wlanInterfaces.wlan0                     = { device = "wlp4s0"; mac = "01:00:00:00:00:01"; };
-  powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
+  powerManagement.cpuFreqGovernor                     = "schedutil";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
   services.mbpfan.highTemp                            = 70;
-  services.mbpfan.lowTemp                             = 60;
+  services.mbpfan.lowTemp                             = 40;
   services.mbpfan.maxTemp                             = 80;
   services.xserver.libinput.enable                    = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
