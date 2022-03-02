@@ -28,10 +28,12 @@
     arandr
     arduino
     blender
+    browsh
     discord
     dunst
     eagle
     feh
+    firefox
     gimp
     haskellPackages.xmonad
     haskellPackages.xmonad-contrib

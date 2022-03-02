@@ -9,6 +9,12 @@ if [ $(id -u) -ne 0 ]; then
 fi
 
 case "$1" in
+  b*)
+    target=$2
+    nix flake update
+    nixos-rebuild switch --flake "$source_dir"#"$target"
+    ;;
+
   r*)
     target=$2
     nixos-rebuild switch --flake "$source_dir"#"$target"
@@ -19,6 +25,6 @@ case "$1" in
     ;;
 
   h*)
-    >&2 echo "usage: $0 [rebuild|update|help]"
+    >&2 echo "usage: $0 [bump|rebuild|update|help]"
     ;;
 esac

@@ -38,6 +38,7 @@
     usbutils
     youtube-dl
     wally-cli
+    wrk2
 
     #pkgsCross.avr.buildPackages.gcc
 
