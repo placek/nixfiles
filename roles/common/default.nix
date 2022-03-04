@@ -139,6 +139,7 @@
           luasnip
           nvim-cmp
           nvim-lspconfig
+          nvim-treesitter
           tabular
           telescope-fzy-native-nvim
           telescope-nvim
