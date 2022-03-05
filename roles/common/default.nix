@@ -38,7 +38,7 @@
     clock24          = true;
     escapeTime       = 0;
     keyMode          = "vi";
-    terminal         = "xterm-256color";
+    terminal         = "tmux-256color";
     extraConfig      = ''
       bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind -T copy-mode-vi v send-keys -X begin-selection
