@@ -2,7 +2,7 @@
   description = "The configuration flakes for my personal setup of NixOS";
 
   inputs = {
-    nixpkgs.url          = "github:NixOS/nixpkgs/d887ac7aee92e8fc54dde9060d60d927afae9d69";
+    nixpkgs.url          = "github:NixOS/nixpkgs/2ebb6c1e5ae402ba35cca5eec58385e5f1adea04";
     dotfiles_flake.url   = "github:placek/dotfiles/master";
     wallpapers_flake.url = "github:placek/wallpapers/master";
     fonts_flake.url      = "github:placek/custom-fonts/master";
@@ -41,6 +41,11 @@
         lambda = nixpkgs.lib.nixosSystem {
           inherit pkgs system;
           modules = [ ./machines/lambda ];
+        };
+
+        column = nixpkgs.lib.nixosSystem {
+          inherit pkgs system;
+          modules = [ ./machines/column ];
         };
       };
     };

@@ -23,9 +23,11 @@
     custom.minipro
     custom.vasm
 
+    ansible_2_11
     avrdude
     docker-compose
     ghostscript
+    jmespath
     jq
     moc
     neomutt

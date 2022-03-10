@@ -3,7 +3,7 @@
 {
   imports = [
     ../../roles/common
-    ../../roles/nextcloud
+    # ../../roles/nextcloud
     ../../roles/router
     ../../users/placek.nix
     ../../users/git.nix
@@ -13,4 +13,8 @@
   boot.loader.systemd-boot.enable      = true;
   networking.hostName                  = "column";
   services.sshd.enable                 = true;
+
+  environment.variables = {
+    SYMBOL = "Ψ";
+  };
 }
