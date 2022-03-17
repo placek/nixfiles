@@ -23,7 +23,7 @@
     custom.minipro
     custom.vasm
 
-    ansible_2_11
+    ansible
     avrdude
     docker-compose
     ghostscript
