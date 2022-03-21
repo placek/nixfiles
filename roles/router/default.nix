@@ -12,7 +12,7 @@
   networking.firewall = {
     enable            = true;
     allowPing         = true;
-    trustedInterfaces = [ "eno2" "eno3" "eno4" ];
+    trustedInterfaces = [ "eno1" ];
     checkReversePath  = false;
     allowedTCPPorts   = [
       22    # ssh
@@ -25,25 +25,17 @@
 
   networking.nat = {
     enable = true;
-    internalIPs = [ "192.168.2.0/24" "192.168.3.0/24" "192.168.4.0/24" ];
-    externalInterface = "eno1";
+    internalIPs = [ "192.168.2.0/24" ];
+    externalInterface = "enp0s20f0u2";
   };
 
   networking.interfaces = {
-    eno1 = {
+    enp0s20f0u2 = {
       useDHCP = true;
     };
 
-    eno2 = {
+    eno1 = {
       ipv4.addresses = [ { address = "192.168.2.1"; prefixLength = 24; } ];
-    };
-
-    eno3 = {
-      ipv4.addresses = [ { address = "192.168.3.1"; prefixLength = 24; } ];
-    };
-
-    eno4 = {
-      ipv4.addresses = [ { address = "192.168.4.1"; prefixLength = 24; } ];
     };
   };
 
@@ -53,46 +45,46 @@
     extraConfig = builtins.readFile ./sources/dnsmasq_config;
   };
 
-  services.nginx = {
-    enable                   = true;
-    recommendedGzipSettings  = true;
-    recommendedOptimisation  = true;
-    recommendedProxySettings = true;
-    recommendedTlsSettings   = true;
-    sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
-
-    virtualHosts."app.placki.cloud" = {
-      forceSSL      = true;
-      enableACME    = true;
-      locations."/" = { proxyPass = "http://localhost:8080"; };
-    };
-  };
-
-  systemd.services.nginx-app-proxy = {
-    description = "Nginx apps reverse proxy";
-    wantedBy    = [ "multi-user.target" ];
-    after       = [ "docker.service" "docker.socket" ];
-    requires    = [ "docker.service" "docker.socket" ];
-    preStop     = "${pkgs.docker}/bin/docker stop nginx-proxy";
-    reload      = "${pkgs.docker}/bin/docker restart nginx-proxy";
-    script      = ''
-      exec ${pkgs.docker}/bin/docker run \
-          --rm \
-          --name=nginx-proxy \
-          --network=nginx-proxy_net \
-          --publish 8080:80 \
-          --env DHPARAM_GENERATION=false \
-          --volume /var/run/docker.sock:/tmp/docker.sock:ro \
-          --volume /var/apps-htpasswd:/etc/nginx/htpasswd \
-          jwilder/nginx-proxy:alpine \
-          "$@"
-    '';
-    serviceConfig = {
-      ExecStartPre    = "-${pkgs.docker}/bin/docker network create nginx-proxy_net";
-      ExecStopPost    = "-${pkgs.docker}/bin/docker rm -f nginx-proxy";
-      TimeoutStartSec = 0;
-      TimeoutStopSec  = 120;
-      Restart         = "always";
-    };
-  };
+  # services.nginx = {
+  #   enable                   = true;
+  #   recommendedGzipSettings  = true;
+  #   recommendedOptimisation  = true;
+  #   recommendedProxySettings = true;
+  #   recommendedTlsSettings   = true;
+  #   sslCiphers               = "AES256+EECDH:AES256+EDH:!aNULL";
+  #
+  #   virtualHosts."app.placki.cloud" = {
+  #     forceSSL      = true;
+  #     enableACME    = true;
+  #     locations."/" = { proxyPass = "http://localhost:8080"; };
+  #   };
+  # };
+  #
+  # systemd.services.nginx-app-proxy = {
+  #   description = "Nginx apps reverse proxy";
+  #   wantedBy    = [ "multi-user.target" ];
+  #   after       = [ "docker.service" "docker.socket" ];
+  #   requires    = [ "docker.service" "docker.socket" ];
+  #   preStop     = "${pkgs.docker}/bin/docker stop nginx-proxy";
+  #   reload      = "${pkgs.docker}/bin/docker restart nginx-proxy";
+  #   script      = ''
+  #     exec ${pkgs.docker}/bin/docker run \
+  #         --rm \
+  #         --name=nginx-proxy \
+  #         --network=nginx-proxy_net \
+  #         --publish 8080:80 \
+  #         --env DHPARAM_GENERATION=false \
+  #         --volume /var/run/docker.sock:/tmp/docker.sock:ro \
+  #         --volume /var/apps-htpasswd:/etc/nginx/htpasswd \
+  #         jwilder/nginx-proxy:alpine \
+  #         "$@"
+  #   '';
+  #   serviceConfig = {
+  #     ExecStartPre    = "-${pkgs.docker}/bin/docker network create nginx-proxy_net";
+  #     ExecStopPost    = "-${pkgs.docker}/bin/docker rm -f nginx-proxy";
+  #     TimeoutStartSec = 0;
+  #     TimeoutStopSec  = 120;
+  #     Restart         = "always";
+  #   };
+  # };
 }

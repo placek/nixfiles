@@ -43,9 +43,9 @@
           modules = [ ./machines/lambda ];
         };
 
-        column = nixpkgs.lib.nixosSystem {
+        alpha = nixpkgs.lib.nixosSystem {
           inherit pkgs system;
-          modules = [ ./machines/column ];
+          modules = [ ./machines/alpha ];
         };
       };
     };
