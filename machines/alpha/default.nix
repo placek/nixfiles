@@ -47,6 +47,12 @@
   systemd.targets.sleep.enable         = false;
   systemd.targets.suspend.enable       = false;
 
+  hardware.enableAllFirmware = true;
+  hardware.pulseaudio.support32Bit = true;
+  hardware.pulseaudio.extraConfig = ''
+    load-module module-bluetooth-policy auto_switch=2
+  '';
+
   environment.variables = {
     SYMBOL = "α";
   };
