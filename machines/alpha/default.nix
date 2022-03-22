@@ -42,6 +42,10 @@
   powerManagement.cpuFreqGovernor      = lib.mkDefault "powersave";
   services.sshd.enable                 = true;
   services.xserver.resolutions         = [ { x = 1920; y = 1080; } ];
+  systemd.targets.hibernate.enable     = false;
+  systemd.targets.hybrid-sleep.enable  = false;
+  systemd.targets.sleep.enable         = false;
+  systemd.targets.suspend.enable       = false;
 
   environment.variables = {
     SYMBOL = "α";
