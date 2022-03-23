@@ -10,6 +10,7 @@
     ../../roles/xserver
 
     ../../users/placek.nix
+    ../../users/git.nix
   ];
 
   fileSystems."/" = {
