@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}, repos-dir ? "/var/git" }:
+{ pkgs ? import <nixpkgs> {} }:
 
 pkgs.stdenv.mkDerivation rec {
   name    = "git-shell-commands-${version}";

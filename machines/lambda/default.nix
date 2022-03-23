@@ -1,4 +1,5 @@
 { config, lib, pkgs, modulesPath, ... }:
+
 {
   imports = [
     (modulesPath + "/hardware/network/broadcom-43xx.nix")
@@ -12,15 +13,15 @@
     ../../users/placek.nix
   ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-label/nixos";
+    fsType = "ext4";
+  };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
-      fsType = "vfat";
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/BOOT";
+    fsType = "vfat";
+  };
 
   swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 

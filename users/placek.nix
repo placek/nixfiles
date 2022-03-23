@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   users.users.placek = {
     description                 = "Paweł Placzyński";

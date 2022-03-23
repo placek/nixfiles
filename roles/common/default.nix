@@ -1,4 +1,5 @@
 { config, pkgs, ... }:
+
 {
   boot.cleanTmpDir               = true;
   boot.consoleLogLevel           = 0;

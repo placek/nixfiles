@@ -17,7 +17,7 @@ My NixOS configuration for various devices.
 sudo nixfiles rebuild <target>
 ```
 
-Where current targets are: *lambda* and *omega*.
+Where current targets are: *alpha*, *lambda* and *omega*.
 
 #### update inputs
 
