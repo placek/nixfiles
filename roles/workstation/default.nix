@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   networking.networkmanager.enable      = true;
-  powerManagement.enable                = true;
   programs.gnupg.agent.enable           = true;
   programs.gnupg.agent.enableSSHSupport = true;
   programs.gnupg.agent.pinentryFlavor   = "qt";

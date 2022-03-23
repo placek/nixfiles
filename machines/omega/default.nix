@@ -53,6 +53,7 @@ in
     networking.firewall.enable                          = true;
     networking.hostName                                 = "omega";
     networking.wlanInterfaces.wlan0                     = { device = "wlp82s0"; mac = "01:00:00:00:00:01"; };
+    powerManagement.enable                              = true;
     powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
     programs.light.enable                               = true;
     services.throttled.enable                           = lib.mkDefault true;

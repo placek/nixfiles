@@ -46,6 +46,7 @@
   networking.firewall.enable                          = true;
   networking.hostName                                 = "lambda";
   networking.wlanInterfaces.wlan0                     = { device = "wlp4s0"; mac = "01:00:00:00:00:01"; };
+  powerManagement.enable                              = true;
   powerManagement.cpuFreqGovernor                     = "schedutil";
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;

@@ -39,7 +39,6 @@
   hardware.pulseaudio.package          = pkgs.pulseaudioFull;
   hardware.video.hidpi.enable          = lib.mkDefault true;
   networking.hostName                  = "alpha";
-  powerManagement.cpuFreqGovernor      = lib.mkDefault "powersave";
   services.sshd.enable                 = true;
   services.xserver.resolutions         = [ { x = 1920; y = 1080; } ];
   systemd.targets.hibernate.enable     = false;
