@@ -76,9 +76,7 @@
           --name=nginx-proxy \
           --network=nginx-proxy_net \
           --publish 8080:80 \
-          --env DHPARAM_GENERATION=false \
           --volume /var/run/docker.sock:/tmp/docker.sock:ro \
-          --volume /var/apps-htpasswd:/etc/nginx/htpasswd \
           jwilder/nginx-proxy:alpine \
           "$@"
     '';
