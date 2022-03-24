@@ -4,7 +4,9 @@ pkgs.stdenv.mkDerivation {
   name = "wine-${name}";
   src = builtins.toFile "wine-${name}.sh" ''
     #!/usr/bin/env bash
-    cd "${prefix}/drive_c/${cpath}"
+    rm -f "$HOME/.wine"
+    ln -s "${prefix}" "$HOME/.wine"
+    cd "$HOME/.wine/drive_c/${cpath}"
     exec wine "${exe}"
   '';
   phases = [ "installPhase" ];
