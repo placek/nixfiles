@@ -6,8 +6,8 @@
   virtualisation.docker.autoPrune.dates = "daily";
   virtualisation.docker.enable          = true;
 
-  security.acme.email       = "placzynski.pawel@gmail.com";
-  security.acme.acceptTerms = true;
+  security.acme.defaults.email = "placzynski.pawel@gmail.com";
+  security.acme.acceptTerms    = true;
 
   networking.domain      = "local";
   networking.nameservers = [ "127.0.0.1" "8.8.8.8" ];

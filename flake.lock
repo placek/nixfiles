@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1647951580,
-        "narHash": "sha256-Z6TsjL83aJHKLv/Hz+3B+J1WeFJdqtEbZTENeGTwcto=",
+        "lastModified": 1648282006,
+        "narHash": "sha256-ol6GCgozydjImWUL3ZpYEkAjFm+7Yv/lyYGl7cejRVw=",
         "owner": "placek",
         "repo": "dotfiles",
-        "rev": "e3107efd33ed7753d2a8e290ee2ee59edaef9f14",
+        "rev": "34006d209b0b1dc6bcc9c5b10ddf1ae7679516f7",
         "type": "github"
       },
       "original": {
@@ -119,17 +119,17 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1646588256,
-        "narHash": "sha256-ZHljmNlt19nSm0Mz8fx6QEhddKUkU4hhwFmfNmGn+EY=",
+        "lastModified": 1647939624,
+        "narHash": "sha256-vz/me8zvhkp7EJYRlIkGlS1SxyuaVTSHltsz9KcAaX0=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2ebb6c1e5ae402ba35cca5eec58385e5f1adea04",
+        "rev": "a1a6472993e44c44c437f6b5004e53289bc8399c",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2ebb6c1e5ae402ba35cca5eec58385e5f1adea04",
+        "rev": "a1a6472993e44c44c437f6b5004e53289bc8399c",
         "type": "github"
       }
     },

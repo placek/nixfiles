@@ -7,9 +7,6 @@
   console.keyMap                   = "pl";
   hardware.keyboard.zsa.enable     = true;
   i18n.defaultLocale               = "pl_PL.UTF-8";
-  nix.gc.automatic                 = true;
-  nix.gc.options                   = "--delete-older-than 7d";
-  nix.useSandbox                   = true;
   nixpkgs.config.allowUnfree       = true;
   services.cron.enable             = true;
   services.pcscd.enable            = true;
@@ -17,9 +14,6 @@
   services.printing.drivers        = [ pkgs.foo2zjs ];
   services.udev.packages           = [ pkgs.yubikey-personalization ];
   security.sudo.wheelNeedsPassword = false;
-  system.autoUpgrade.allowReboot   = true;
-  system.autoUpgrade.channel       = https://nixos.org/channels/nixos-21.11;
-  system.autoUpgrade.enable        = true;
   system.stateVersion              = "21.11";
   time.timeZone                    = "Europe/Warsaw";
 
@@ -150,6 +144,7 @@
           vim-gruvbox8
           vim-nix
           vim-signature
+          fidget-nvim
           vim-surround
           which-key-nvim
         ];
