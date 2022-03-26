@@ -43,7 +43,7 @@ in
     hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
     hardware.opengl.driSupport                          = true;
     hardware.opengl.enable                              = true;
-    hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel vaapiVdpau libvdpau-va-gl intel-media-driver ];
+    hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel libvdpau-va-gl intel-media-driver ];
     hardware.pulseaudio.enable                          = true;
     hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
     hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
