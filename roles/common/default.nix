@@ -47,6 +47,7 @@
       set  -g status-left-length 85
       setw -g alternate-screen on
       setw -g monitor-activity off
+      set-option -sa terminal-overrides ',xterm-256color:RGB'
       set-option -g status-bg "colour0"
       set-option -g status-fg "colour7"
       set-option -g status-left "#[fg=colour7, bg=colour8, bold] #S #[fg=colour8, bg=colour0]"
