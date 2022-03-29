@@ -39,7 +39,7 @@
       bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
-      bind a run "tmux split-pane 'projects add'"
+      bind a run "tmux split-pane -vb 'projects add -t'"
       set  -g display-time 2000
       set  -g focus-events on
       set  -g mouse on
