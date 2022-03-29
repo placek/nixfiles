@@ -35,26 +35,7 @@
     escapeTime       = 0;
     keyMode          = "vi";
     terminal         = "tmux-256color";
-    extraConfig      = ''
-      bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
-      bind -T copy-mode-vi v send-keys -X begin-selection
-      bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
-      bind a run "tmux split-pane -vb 'projects add -t'"
-      set  -g display-time 2000
-      set  -g focus-events on
-      set  -g mouse on
-      set  -g status-interval 5
-      set  -g status-left-length 85
-      setw -g alternate-screen on
-      setw -g monitor-activity off
-      set-option -sa terminal-overrides ',xterm-256color:RGB'
-      set-option -g status-bg "colour0"
-      set-option -g status-fg "colour7"
-      set-option -g status-left "#[fg=colour7, bg=colour8, bold] #S #[fg=colour8, bg=colour0]"
-      set-option -g status-right "#[fg=colour8, bg=colour0]#[fg=colour7, bg=colour8, bold] #H "
-      set-window-option -g window-status-current-format "#[fg=colour3, bg=colour0, bold] #I #W "
-      set-window-option -g window-status-format " #I #W "
-    '';
+    extraConfig      = builtins.readFile ./sources/tmux_config;
   };
 
   environment.variables = {
@@ -110,12 +91,7 @@
     viAlias       = true;
     vimAlias      = true;
     configure     = {
-      customRC = ''
-        set runtimepath^=~/.vim
-        let &packpath = &runtimepath
-        source ~/.vimrc
-        luafile ~/.vim/lua/nvim.lua
-      '';
+      customRC = builtins.readFile ./sources/vim_config;
       packages.nix = with pkgs.vimPlugins; {
         start = [
           TrueZen-nvim

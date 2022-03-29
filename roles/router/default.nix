@@ -18,10 +18,10 @@
     trustedInterfaces = [ "eno1" ];
     checkReversePath  = false;
     allowedTCPPorts   = [
-      22    # ssh
-      80    # http
-      443   # https
-      2222  # git
+      22   # ssh
+      80   # http
+      443  # https
+      2222 # git
     ];
     allowedUDPPorts = [ ];
   };
