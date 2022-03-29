@@ -126,15 +126,18 @@
           cmp_luasnip
           comment-nvim
           direnv-vim
+          fidget-nvim
           friendly-snippets
           gitsigns-nvim
           haskell-vim
           lualine-nvim
           luasnip
           nvim-cmp
+          nvim-lint
           nvim-lspconfig
           nvim-treesitter
           tabular
+          telescope-file-browser-nvim
           telescope-fzy-native-nvim
           telescope-nvim
           vim-css-color
@@ -144,7 +147,6 @@
           vim-gruvbox8
           vim-nix
           vim-signature
-          fidget-nvim
           vim-surround
           which-key-nvim
         ];
