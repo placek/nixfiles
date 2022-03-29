@@ -14,13 +14,9 @@
     ];
   };
 
-  nixpkgs.config.packageOverrides = pkgs: rec {
-    # git-shell-commands = pkgs.callPackage ../packages/git-shell-commands {};
-  };
-
   environment.systemPackages = with pkgs; [
     git
     docker-compose
-    # git-shell-commands
+    custom.gsc
   ];
 }

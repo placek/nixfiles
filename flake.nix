@@ -28,6 +28,7 @@
           custom.dcc6502      = pkgs.callPackage ./packages/dcc6502 {};
           custom.minipro      = pkgs.callPackage ./packages/minipro {};
           custom.vasm         = pkgs.callPackage ./packages/vasm {};
+          custom.gsc          = pkgs.callPackage ./packages/git-shell-commands {};
         };
       };
     in

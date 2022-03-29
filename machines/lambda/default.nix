@@ -27,12 +27,12 @@
 
   boot.initrd.availableKernelModules                  = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.kernelModules                                  = [ "kvm-intel" ];
-  hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
   boot.kernelPackages                                 = pkgs.linuxKernel.packages.linux_5_15;
   boot.kernelParams                                   = [ "acpi_backlight=vendor" "video.use_native_backlight=1" ];
   boot.loader.efi.canTouchEfiVariables                = true;
   boot.loader.systemd-boot.enable                     = true;
   hardware.bluetooth.enable                           = true;
+  hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
   hardware.enableRedistributableFirmware              = true;
   hardware.facetimehd.enable                          = true;
   hardware.opengl.driSupport                          = true;
@@ -47,8 +47,8 @@
   networking.firewall.enable                          = true;
   networking.hostName                                 = "lambda";
   networking.wlanInterfaces.wlan0                     = { device = "wlp4s0"; mac = "01:00:00:00:00:01"; };
-  powerManagement.enable                              = true;
   powerManagement.cpuFreqGovernor                     = "schedutil";
+  powerManagement.enable                              = true;
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
   services.mbpfan.highTemp                            = 70;
