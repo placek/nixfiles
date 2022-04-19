@@ -63,6 +63,7 @@
     fish
     fzf
     git
+    git-crypt
     imagemagick7
     inxi
     jmtpfs
