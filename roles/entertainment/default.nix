@@ -38,18 +38,18 @@ in
     wineWowPackages.stable
 
     (dwarf-fortress-packages.dwarf-fortress-full.override {
-       enableIntro = false;
-       enableSound = false;
-       enableDFHack = true;
-       enableTWBT = true;
-       enableStoneSense = true;
-       enableDwarfTherapist = true;
-       enableLegendsBrowser = false;
-       enableTruetype = true;
-       enableFPS = false;
-       theme = "cla";
-       # theme = "spacefox";
-       # theme = "phoebus";
+      dfVersion            = "0.47.05";
+      enableIntro          = false;
+      enableSound          = false;
+      enableDFHack         = false;
+      enableTWBT           = false;
+      enableStoneSense     = false;
+      enableDwarfTherapist = false;
+      enableLegendsBrowser = false;
+      enableTruetype       = false;
+      enableFPS            = false;
+      enableTextMode       = true;
+      theme                = null;
     })
 
     wine-rome-total-war
