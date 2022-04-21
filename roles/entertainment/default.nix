@@ -44,7 +44,7 @@ in
        enableTWBT = true;
        enableStoneSense = true;
        enableDwarfTherapist = true;
-       enableLegendsBrowser = true;
+       enableLegendsBrowser = false;
        enableTruetype = true;
        enableFPS = false;
        theme = "cla";
