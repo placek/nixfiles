@@ -37,6 +37,21 @@ in
     minecraft
     wineWowPackages.stable
 
+    (dwarf-fortress-packages.dwarf-fortress-full.override {
+       enableIntro = false;
+       enableSound = false;
+       enableDFHack = true;
+       enableTWBT = true;
+       enableStoneSense = true;
+       enableDwarfTherapist = true;
+       enableLegendsBrowser = true;
+       enableTruetype = true;
+       enableFPS = false;
+       theme = "cla";
+       # theme = "spacefox";
+       # theme = "phoebus";
+    })
+
     wine-rome-total-war
     wine-rome-barbarian-invasion
     wine-rome-alexander
