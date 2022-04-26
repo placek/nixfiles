@@ -123,6 +123,7 @@
           vim-fish
           vim-fugitive
           vim-gruvbox8
+          vim-jinja
           vim-nix
           vim-signature
           vim-surround
