@@ -107,6 +107,7 @@
           fidget-nvim
           friendly-snippets
           gitsigns-nvim
+          harpoon
           haskell-vim
           lualine-nvim
           luasnip

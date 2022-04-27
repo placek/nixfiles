@@ -24,36 +24,53 @@ let
     cpath  = "Program Files (x86)/The Creative Assembly/Rome - Total War";
     exe    = "RomeTW-ALX.exe";
   };
+
+  ncurses-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+    dfVersion            = "0.47.05";
+    enableIntro          = false;
+    enableSound          = false;
+    enableDFHack         = false;
+    enableTWBT           = false;
+    enableStoneSense     = false;
+    enableDwarfTherapist = false;
+    enableLegendsBrowser = false;
+    enableTruetype       = false;
+    enableFPS            = false;
+    enableTextMode       = true;
+    theme                = null;
+  };
+
+  gui-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+    dfVersion            = "0.47.05";
+    enableIntro          = false;
+    enableSound          = false;
+    enableDFHack         = true;
+    enableTWBT           = true;
+    enableStoneSense     = true;
+    enableDwarfTherapist = true;
+    enableLegendsBrowser = true;
+    enableTruetype       = true;
+    enableFPS            = false;
+    enableTextMode       = false;
+    theme                = "spacefox";
+  };
 in
-{
-  hardware.opengl.driSupport32Bit = true;
+  {
+    hardware.opengl.driSupport32Bit = true;
 
-  environment.systemPackages = with pkgs; [
-    #steam
-    brogue
-    glxinfo
-    libretro.mesen
-    mesa
-    minecraft
-    wineWowPackages.stable
+    environment.systemPackages = with pkgs; [
+      #steam
+      brogue
+      glxinfo
+      libretro.mesen
+      mesa
+      minecraft
+      wineWowPackages.stable
 
-    (dwarf-fortress-packages.dwarf-fortress-full.override {
-      dfVersion            = "0.47.05";
-      enableIntro          = false;
-      enableSound          = false;
-      enableDFHack         = false;
-      enableTWBT           = false;
-      enableStoneSense     = false;
-      enableDwarfTherapist = false;
-      enableLegendsBrowser = false;
-      enableTruetype       = false;
-      enableFPS            = false;
-      enableTextMode       = true;
-      theme                = null;
-    })
-
-    wine-rome-total-war
-    wine-rome-barbarian-invasion
-    wine-rome-alexander
-  ];
-}
+      gui-fortress
+      # ncurses-fortress
+      wine-rome-total-war
+      wine-rome-barbarian-invasion
+      wine-rome-alexander
+    ];
+  }
