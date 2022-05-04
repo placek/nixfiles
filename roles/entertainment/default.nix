@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stdenv, lib, ... }:
 
 let
   wine-rome-total-war = import ../../packages/run-in-wine {
@@ -25,35 +25,7 @@ let
     exe    = "RomeTW-ALX.exe";
   };
 
-  ncurses-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
-    dfVersion            = "0.47.05";
-    enableIntro          = false;
-    enableSound          = false;
-    enableDFHack         = false;
-    enableTWBT           = false;
-    enableStoneSense     = false;
-    enableDwarfTherapist = false;
-    enableLegendsBrowser = false;
-    enableTruetype       = false;
-    enableFPS            = false;
-    enableTextMode       = true;
-    theme                = null;
-  };
-
-  gui-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
-    dfVersion            = "0.47.05";
-    enableIntro          = false;
-    enableSound          = false;
-    enableDFHack         = true;
-    enableTWBT           = true;
-    enableStoneSense     = true;
-    enableDwarfTherapist = true;
-    enableLegendsBrowser = true;
-    enableTruetype       = true;
-    enableFPS            = false;
-    enableTextMode       = false;
-    theme                = "spacefox";
-  };
+  dwarf = import ../../packages/dwarf { inherit pkgs stdenv lib; };
 in
   {
     hardware.opengl.driSupport32Bit = true;
@@ -67,8 +39,7 @@ in
       minecraft
       wineWowPackages.stable
 
-      gui-fortress
-      # ncurses-fortress
+      dwarf
       wine-rome-total-war
       wine-rome-barbarian-invasion
       wine-rome-alexander
