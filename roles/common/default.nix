@@ -77,6 +77,7 @@
     ripgrep
     rlwrap
     rsync
+    sshfs
     stow
     tig
     universal-ctags

@@ -62,7 +62,7 @@ in
     services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
     services.xserver.libinput.touchpad.tapping          = false;
     services.xserver.resolutions                        = [ { x = 1920; y = 1080; } ];
-    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" ];
+    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" "displaylink" ];
 
     hardware.nvidia.prime = {
       sync.enable = lib.mkDefault true;
