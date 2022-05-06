@@ -35,7 +35,29 @@
     escapeTime       = 0;
     keyMode          = "vi";
     terminal         = "tmux-256color";
-    extraConfig      = builtins.readFile ./sources/tmux_config;
+    extraConfig      = ''
+      run-shell ${pkgs.tmuxPlugins.yank.rtp}
+      run-shell ${pkgs.tmuxPlugins.fingers.rtp}
+      set -g @override_copy_command '${pkgs.xclip}/bin/xclip -i'
+      set -g @shell_mode 'vi'
+      bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
+      bind -T copy-mode-vi v send-keys -X begin-selection
+      bind a run "tmux split-pane -vb 'projects add -t'"
+      set  -g display-time 2000
+      set  -g focus-events on
+      set  -g mouse on
+      set  -g status-interval 5
+      set  -g status-left-length 85
+      setw -g alternate-screen on
+      setw -g monitor-activity off
+      set-option -sa terminal-overrides ',xterm-256color:RGB'
+      set-option -g status-bg "colour0"
+      set-option -g status-fg "colour7"
+      set-option -g status-left "#[fg=colour7, bg=colour8, bold] #S #[fg=colour8, bg=colour0]"
+      set-option -g status-right "#[fg=colour8, bg=colour0]#[fg=colour7, bg=colour8, bold] #H "
+      set-window-option -g window-status-current-format "#[fg=colour3, bg=colour0, bold] #I #W "
+      set-window-option -g window-status-format " #I #W "
+    '';
   };
 
   environment.variables = {
