@@ -36,25 +36,30 @@
     keyMode          = "vi";
     terminal         = "tmux-256color";
     extraConfig      = ''
-      run-shell ${pkgs.tmuxPlugins.yank.rtp}
       run-shell ${pkgs.tmuxPlugins.fingers.rtp}
-      set -g @override_copy_command '${pkgs.xclip}/bin/xclip -i'
-      set -g @shell_mode 'vi'
+      run-shell ${pkgs.tmuxPlugins.yank.rtp}
+
       bind -T copy-mode-vi C-v send-keys -X rectangle-toggle
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind a run "tmux split-pane -vb 'projects add -t'"
-      set  -g display-time 2000
-      set  -g focus-events on
-      set  -g mouse on
-      set  -g status-interval 5
-      set  -g status-left-length 85
+      bind-key -T prefix F command-prompt "find-window -Z -- '%%'"
+      bind-key -T prefix f run-shell "${pkgs.tmuxPlugins.fingers}/share/tmux-plugins/fingers/scripts/tmux-fingers.sh 'fingers-mode'"
+
+      set -g display-time 2000
+      set -g focus-events on
+      set -g mouse on
+      set -g status-interval 5
+      set -g status-left-length 85
+      set -g @fingers-keyboard-layout "qwerty-homerow"
+      set -g @override_copy_command '${pkgs.xclip}/bin/xclip -i'
+      set -g @shell_mode 'vi'
       setw -g alternate-screen on
       setw -g monitor-activity off
-      set-option -sa terminal-overrides ',xterm-256color:RGB'
       set-option -g status-bg "colour0"
       set-option -g status-fg "colour7"
       set-option -g status-left "#[fg=colour7, bg=colour8, bold] #S #[fg=colour8, bg=colour0]"
       set-option -g status-right "#[fg=colour8, bg=colour0]#[fg=colour7, bg=colour8, bold] #H "
+      set-option -sa terminal-overrides ',xterm-256color:RGB'
       set-window-option -g window-status-current-format "#[fg=colour3, bg=colour0, bold] #I #W "
       set-window-option -g window-status-format " #I #W "
     '';
