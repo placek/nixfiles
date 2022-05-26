@@ -144,6 +144,7 @@
           nvim-lspconfig
           nvim-treesitter
           tabular
+          targets-vim
           telescope-file-browser-nvim
           telescope-fzy-native-nvim
           telescope-nvim
