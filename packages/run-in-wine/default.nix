@@ -1,4 +1,4 @@
-{ pkgs, name, cpath, exe, prefix }:
+{ pkgs, name, cpath, exe, prefix, args ? "" }:
 
 pkgs.stdenv.mkDerivation {
   name = "wine-${name}";
@@ -7,7 +7,7 @@ pkgs.stdenv.mkDerivation {
     rm -f "$HOME/.wine"
     ln -s "${prefix}" "$HOME/.wine"
     cd "$HOME/.wine/drive_c/${cpath}"
-    exec wine "${exe}"
+    exec wine "${exe}" ${args}
   '';
   phases = [ "installPhase" ];
   installPhase = ''

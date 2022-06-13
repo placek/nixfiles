@@ -25,6 +25,15 @@ let
     exe    = "RomeTW-ALX.exe";
   };
 
+  wine-rome-enhancement = import ../../packages/run-in-wine {
+    inherit pkgs;
+    prefix = "$HOME/Wine/rome_tw";
+    name   = "rome-enhancement";
+    cpath  = "Program Files (x86)/The Creative Assembly/Rome - Total War";
+    exe    = "RomeTW-ALX.exe";
+    args   = "-show_err -mod:HRTW -noalexander";
+  };
+
   dwarf = import ../../packages/dwarf { inherit pkgs stdenv lib; };
 in
   {
@@ -43,5 +52,6 @@ in
       wine-rome-total-war
       wine-rome-barbarian-invasion
       wine-rome-alexander
+      wine-rome-enhancement
     ];
   }
