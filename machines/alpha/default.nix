@@ -36,7 +36,6 @@
   hardware.opengl.driSupport           = true;
   hardware.opengl.enable               = true;
   hardware.pulseaudio.enable           = true;
-  hardware.pulseaudio.extraModules     = [ pkgs.pulseaudio-modules-bt ];
   hardware.pulseaudio.package          = pkgs.pulseaudioFull;
   hardware.video.hidpi.enable          = lib.mkDefault true;
   networking.hostName                  = "alpha";

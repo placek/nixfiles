@@ -40,7 +40,6 @@
   hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel ];
   hardware.pulseaudio.enable                          = true;
   hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
-  hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
   hardware.video.hidpi.enable                         = lib.mkDefault false;
   networking.firewall.allowPing                       = false;
   networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];

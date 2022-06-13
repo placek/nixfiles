@@ -14,7 +14,7 @@
   services.printing.drivers        = [ pkgs.foo2zjs ];
   services.udev.packages           = [ pkgs.yubikey-personalization ];
   security.sudo.wheelNeedsPassword = false;
-  system.stateVersion              = "21.11";
+  system.stateVersion              = "22.05";
   time.timeZone                    = "Europe/Warsaw";
 
   # flakes

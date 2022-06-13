@@ -45,7 +45,6 @@ in
     hardware.opengl.enable                              = true;
     hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel libvdpau-va-gl intel-media-driver ];
     hardware.pulseaudio.enable                          = true;
-    hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
     hardware.pulseaudio.package                         = pkgs.pulseaudioFull;
     hardware.video.hidpi.enable                         = lib.mkDefault true;
     networking.firewall.allowPing                       = false;
