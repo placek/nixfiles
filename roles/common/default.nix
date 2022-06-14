@@ -80,6 +80,7 @@
     aria
     bash
     bat
+    bind
     cryptsetup
     curl
     direnv
@@ -91,11 +92,13 @@
     fzf
     git
     git-crypt
+    htop
     imagemagick7
     inxi
     jmtpfs
     lsd
     netpbm
+    ngrep
     nix-direnv-flakes
     nodejs
     openssl
