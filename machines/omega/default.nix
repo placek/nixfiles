@@ -63,6 +63,7 @@ in
     services.xserver.resolutions                        = [ { x = 1920; y = 1080; } ];
     services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" "displaylink" ];
 
+    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
     hardware.nvidia.prime = {
       sync.enable = lib.mkDefault true;
       intelBusId  = "PCI:0:2:0";
