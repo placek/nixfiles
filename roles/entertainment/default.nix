@@ -38,9 +38,9 @@ let
 in
   {
     hardware.opengl.driSupport32Bit = true;
+    programs.steam.enable = true;
 
     environment.systemPackages = with pkgs; [
-      #steam
       brogue
       glxinfo
       libretro.mesen
