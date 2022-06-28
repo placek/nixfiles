@@ -36,7 +36,6 @@
     orca-c
     pinentry-curses
     tiv
-    todoist
     usbutils
     youtube-dl
     wally-cli
@@ -46,11 +45,4 @@
 
     (pass.withExtensions (ext: [ ext.pass-otp ]))
   ];
-
-  services.cron = {
-    enable = true;
-    systemCronJobs = [
-      "*/2 * * * *      placek    ${pkgs.todoist}/bin/todoist sync"
-    ];
-  };
 }
