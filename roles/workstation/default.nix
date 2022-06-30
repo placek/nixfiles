@@ -25,6 +25,7 @@
 
     ansible
     avrdude
+    cbqn
     docker-compose
     ghostscript
     jmespath
@@ -37,9 +38,9 @@
     pinentry-curses
     tiv
     usbutils
-    youtube-dl
     wally-cli
     wrk2
+    youtube-dl
 
     #pkgsCross.avr.buildPackages.gcc
 

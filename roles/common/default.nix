@@ -135,6 +135,7 @@
           cmp_luasnip
           comment-nvim
           direnv-vim
+          dressing-nvim
           fidget-nvim
           friendly-snippets
           gitsigns-nvim
