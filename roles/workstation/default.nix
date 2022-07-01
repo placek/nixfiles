@@ -9,6 +9,7 @@
   sound.enable                          = true;
   virtualisation.docker.autoPrune.dates = "daily";
   virtualisation.docker.enable          = true;
+  virtualisation.libvirtd.enable        = true;
 
   # plutus binary cache
   nix = {
@@ -38,6 +39,7 @@
     pinentry-curses
     tiv
     usbutils
+    vagrant
     wally-cli
     wrk2
     youtube-dl

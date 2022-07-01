@@ -27,8 +27,7 @@
 
   boot.extraModulePackages             = [ ];
   boot.initrd.availableKernelModules   = [ "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules            = [ ];
-  boot.kernelModules                   = [ "kvm-intel" ];
+  boot.kernelModules                   = [ "kvm-amd" "kvm-intel" ];
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.enable      = true;
   hardware.bluetooth.enable            = true;
