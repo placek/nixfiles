@@ -35,7 +35,7 @@ in
     boot.extraModulePackages                            = with config.boot.kernelPackages; [ acpi_call ];
     boot.initrd.availableKernelModules                  = [ "xhci_pci" "nvme" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
     boot.initrd.kernelModules                           = [ "i915" ];
-    boot.kernelModules                                  = [ "acpi_call" ];
+    boot.kernelModules                                  = [ "acpi_call" "kvm-amd" "kvm-intel" ];
     boot.loader.efi.canTouchEfiVariables                = true;
     boot.loader.systemd-boot.enable                     = true;
     environment.systemPackages                          = [ nvidia-offload ];
