@@ -34,6 +34,14 @@ let
     args   = "-show_err -mod:HRTW -noalexander";
   };
 
+  heroes = import ../../packages/run-in-wine {
+    inherit pkgs;
+    prefix = "$HOME/Wine/homm3";
+    name   = "heroes3";
+    cpath  = "Program Files (x86)/GOG.com/Heroes of Might and Magic 3 Complete";
+    exe    = "Heroes3.exe";
+  };
+
   dwarf = import ../../packages/dwarf { inherit pkgs stdenv lib; };
 in
   {
@@ -49,6 +57,7 @@ in
       wineWowPackages.stable
 
       dwarf
+      heroes
       wine-rome-total-war
       wine-rome-barbarian-invasion
       wine-rome-alexander
