@@ -39,7 +39,6 @@
   hardware.opengl.enable                              = true;
   hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel ];
   hardware.pulseaudio.enable                          = true;
-  hardware.pulseaudio.extraModules                    = [ pkgs.pulseaudio-modules-bt ];
   hardware.video.hidpi.enable                         = lib.mkDefault false;
   networking.firewall.allowPing                       = false;
   networking.firewall.allowedTCPPortRanges            = [ { from = 3000; to = 3009; } ];
@@ -50,9 +49,6 @@
   powerManagement.enable                              = true;
   programs.light.enable                               = true;
   services.mbpfan.enable                              = true;
-  services.mbpfan.highTemp                            = 70;
-  services.mbpfan.lowTemp                             = 40;
-  services.mbpfan.maxTemp                             = 80;
   services.xserver.libinput.enable                    = true;
   services.xserver.libinput.touchpad.naturalScrolling = true;
   services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
