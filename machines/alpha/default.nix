@@ -54,4 +54,8 @@
   environment.variables = {
     SYMBOL = "α";
   };
+
+  system.userActivationScripts = {
+    dotfiles = import ../../packages/dotfilesScript { pkgs = pkgs; mobile = false; };
+  };
 }

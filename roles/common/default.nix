@@ -166,25 +166,4 @@
       };
     };
   };
-
-  system.userActivationScripts = {
-    dotfiles = ''
-      source_dir="${pkgs.custom.dotfiles}/share"
-      target_dir=$HOME
-      dotfiles_dir=$target_dir/.config/dotfiles
-      rm -rf $dotfiles_dir
-      mkdir $dotfiles_dir
-      cp -rv $source_dir/* $dotfiles_dir
-      chmod -R +w $dotfiles_dir
-      for dir in $(find $source_dir/* -mindepth 1 -type d -printf "%P\n"); do
-        mkdir -p  $target_dir/$dir
-        chmod 700 $target_dir/$dir
-      done
-      if [ $(hostname) = "alpha" ]; then
-        ${pkgs.gnused}/bin/sed -i -e "s/%battery%//" "$HOME/.xmobarrc"
-        ${pkgs.gnused}/bin/sed -i -e "s/%wlan0wi%//" "$HOME/.xmobarrc"
-      fi
-      true
-    '';
-  };
 }

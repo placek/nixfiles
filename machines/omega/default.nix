@@ -73,4 +73,8 @@ in
     environment.variables = {
       SYMBOL = "ω";
     };
+
+    system.userActivationScripts = {
+      dotfiles = import ../../packages/dotfilesScript { pkgs = pkgs; mobile = true; };
+    };
   }
