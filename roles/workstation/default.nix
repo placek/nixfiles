@@ -37,6 +37,7 @@
     nix-prefetch-git
     orca-c
     pinentry-curses
+    qmk
     tiv
     usbutils
     vagrant
