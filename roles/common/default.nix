@@ -115,6 +115,7 @@
     unzip
     vifm-full
     wget
+    zoxide
   ];
 
   programs.neovim = {
