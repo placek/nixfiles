@@ -37,6 +37,7 @@
     nix-prefetch-git
     orca-c
     pinentry-curses
+    rpi-imager
     qmk
     tiv
     usbutils
