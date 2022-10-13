@@ -2,7 +2,7 @@
   description = "The configuration flakes for my personal setup of NixOS";
 
   inputs = {
-    nixpkgs.url          = "github:NixOS/nixpkgs/d9536b9b1e33377fb520e115bc8588d093ed97be";
+    nixpkgs.url          = "github:NixOS/nixpkgs/master";
     dotfiles_flake.url   = "github:placek/dotfiles/master";
     wallpapers_flake.url = "github:placek/wallpapers/master";
     fonts_flake.url      = "github:placek/custom-fonts/master";

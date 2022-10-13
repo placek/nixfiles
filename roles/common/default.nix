@@ -19,7 +19,6 @@
 
   # flakes
   nix = {
-    package = pkgs.nixFlakes;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -93,7 +92,7 @@
     git
     git-crypt
     htop
-    imagemagick7
+    imagemagick
     inxi
     jmtpfs
     lsd
@@ -127,7 +126,6 @@
       customRC = builtins.readFile ./sources/vim_config;
       packages.nix = with pkgs.vimPlugins; {
         start = [
-          TrueZen-nvim
           cmp-buffer
           cmp-cmdline
           cmp-nvim-lsp
@@ -153,6 +151,7 @@
           telescope-file-browser-nvim
           telescope-fzy-native-nvim
           telescope-nvim
+          true-zen-nvim
           vim-css-color
           vim-expand-region
           vim-fish
