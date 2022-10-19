@@ -16,6 +16,7 @@
   security.sudo.wheelNeedsPassword = false;
   system.stateVersion              = "22.05";
   time.timeZone                    = "Europe/Warsaw";
+  networking.extraHosts            = builtins.readFile ./sources/hosts.ipv4.txt;
 
   # flakes
   nix = {
