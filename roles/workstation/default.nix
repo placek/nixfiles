@@ -41,6 +41,7 @@
     nix-prefetch-git
     orca-c
     pinentry-curses
+    playerctl
     rpi-imager
     qmk
     tiv
