@@ -61,7 +61,7 @@ in
     services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
     services.xserver.libinput.touchpad.tapping          = false;
     services.xserver.resolutions                        = [ { x = 1920; y = 1080; } ];
-    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" "displaylink" ];
+    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" ];
 
     hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
     hardware.nvidia.prime = {
