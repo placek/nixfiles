@@ -34,6 +34,7 @@
     ghostscript
     jmespath
     jq
+    go-jira
     moc
     neomutt
     ngrok
@@ -44,6 +45,7 @@
     playerctl
     rpi-imager
     qmk
+    timidity
     tiv
     usbutils
     vagrant
