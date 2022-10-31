@@ -41,7 +41,7 @@ let
 
   libpath = lib.makeLibraryPath [ pkgs.stdenv.cc.cc pkgs.stdenv.cc.libc pkgs.SDL dfu ];
 
-  df = pkgs.stdenv.mkDerivation {
+  df = pkgs.stdenv.mkDerivation rec {
     pname = "dwarf-fortress-placek";
     version = dfVersion;
 
@@ -49,6 +49,7 @@ let
 
     colors = ./colors.txt;
     theme = ./theme.png;
+    textMode = true;
     installPhase = ''
       mkdir -p $out
       cp -r * $out
@@ -64,10 +65,18 @@ let
       cp $colors $out/data/init/colors.txt
       cp $theme $out/data/art/theme.png
       substituteInPlace $out/data/init/init.txt \
-        --replace '[INTRO:YES]' '[INTRO:NO]' \
+    '' + (if textMode then
+    ''
+        --replace '[PRINT_MODE:2D]' '[PRINT_MODE:TEXT]' \
+    ''
+    else
+    ''
         --replace '[TRUETYPE:YES]' '[TRUETYPE:NO]' \
         --replace '[BLACK_SPACE:YES]' '[BLACK_SPACE:NO]' \
         --replace '[FONT:curses_640x300.png]' '[FONT:theme.png]' \
+    '') +
+    ''
+        --replace '[INTRO:YES]' '[INTRO:NO]' \
         --replace '[SOUND:YES]' '[SOUND:NO]'
       # Store the new hash
       md5sum $exe | awk '{ print $1 }' > $out/hash.md5
