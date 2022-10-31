@@ -42,6 +42,7 @@
     inkscape
     kitty
     libnotify
+    lilypond
     mplayer
     paper-icon-theme
     pinentry-qt
