@@ -100,6 +100,7 @@
     netpbm
     ngrep
     nix-direnv-flakes
+    nnn
     nodejs
     openssl
     openvpn
@@ -113,7 +114,6 @@
     universal-ctags
     unrar
     unzip
-    vifm-full
     wget
     zoxide
   ];
