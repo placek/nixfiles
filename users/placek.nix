@@ -3,7 +3,7 @@
 {
   users.users.placek = {
     description                 = "Paweł Placzyński";
-    extraGroups                 = [ "audio" "disk" "docker" "input" "messagebus" "networkmanager" "plugdev" "systemd-journal" "video" "wheel" "qemu-libvirtd" "libvirtd" ];
+    extraGroups                 = [ "audio" "disk" "docker" "input" "messagebus" "networkmanager" "plugdev" "systemd-journal" "video" "wheel" "qemu-libvirtd" "libvirtd" "dialout" ];
     isNormalUser                = true;
     shell                       = pkgs.fish;
     uid                         = 1000;

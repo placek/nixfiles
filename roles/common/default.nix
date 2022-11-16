@@ -97,6 +97,7 @@
     inxi
     jmtpfs
     lsd
+    mdcat
     netpbm
     ngrep
     nix-direnv-flakes
