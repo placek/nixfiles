@@ -119,11 +119,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1665683778,
-        "narHash": "sha256-vE/VAv9GbxlFYgVexxIxaSJ1gZV8XGJWa2Ra3tbNPFM=",
+        "lastModified": 1668753452,
+        "narHash": "sha256-AYPotsT0wEVVeXOkPzkDZmCh5AabJHnfF9DIEOx86g4=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "2196a95e686f11c66ccdcee13183e9b9d10d7886",
+        "rev": "6e44c96a5dcad9baf037177b5017e805f5c692f6",
         "type": "github"
       },
       "original": {
@@ -163,11 +163,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1640263061,
-        "narHash": "sha256-ufnfFl7ZE+hDj2ZAM48ZVRufDcKyQbUESWdyd7sZsCE=",
+        "lastModified": 1666261124,
+        "narHash": "sha256-1x5Q7amVxReopcg6ikgOpYAUabtJjtHUDGBnS3DZRP0=",
         "owner": "placek",
         "repo": "wallpapers",
-        "rev": "3fc9c2e2f32f813a98806302f7bc1e206fbe16ac",
+        "rev": "e53e773543c4d99186fa64dc0ed073f150cabd0f",
         "type": "github"
       },
       "original": {
