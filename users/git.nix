@@ -22,9 +22,11 @@
 
   system.userActivationScripts = {
     git-shell-commmand = ''
-      rm -f $HOME/git-shell-commands
-      ln -s ${pkgs.custom.gsc}/bin $HOME/git-shell-commands
-      true
+      if [ $(whoami) == 'git' ]; then
+        rm -f $HOME/git-shell-commands
+        ln -s ${pkgs.custom.gsc}/bin $HOME/git-shell-commands
+        true
+      fi
     '';
   };
 }

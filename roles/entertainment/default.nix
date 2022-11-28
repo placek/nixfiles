@@ -50,7 +50,20 @@ let
     exe    = "GOTHIC.EXE";
   };
 
-  dwarf = import ../../packages/dwarf { inherit pkgs stdenv lib; };
+  # dwarf = import ../../packages/dwarf { inherit pkgs stdenv lib; };
+  gui-fortress = pkgs.dwarf-fortress-packages.dwarf-fortress-full.override {
+    enableIntro          = false;
+    enableSound          = false;
+    enableDFHack         = true;
+    enableTWBT           = true;
+    enableStoneSense     = true;
+    enableDwarfTherapist = true;
+    enableLegendsBrowser = true;
+    enableTruetype       = true;
+    enableFPS            = false;
+    enableTextMode       = false;
+    theme                = "spacefox";
+  };
 in
   {
     hardware.opengl.driSupport32Bit = true;
@@ -64,7 +77,8 @@ in
       minecraft
       wineWowPackages.stable
 
-      dwarf
+      # dwarf
+      gui-fortress
       gothic
       heroes
       wine-rome-total-war

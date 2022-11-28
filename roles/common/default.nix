@@ -144,6 +144,7 @@
           haskell-vim
           lualine-nvim
           luasnip
+          nnn-vim
           nvim-cmp
           nvim-lint
           nvim-lspconfig
