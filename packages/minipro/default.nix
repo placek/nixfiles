@@ -7,8 +7,8 @@ stdenv.mkDerivation rec {
   src = fetchFromGitLab {
     owner  = "DavidGriffith";
     repo   = "minipro";
-    rev    = "8be592c954264afdc3a2cb596ee45517cc5dc621";
-    sha256 = "15x0rmwvnznkh43chb5la1xg5c0xqw1gj1r8iqlwlnrv4qpzca0z";
+    rev    = "22ec014f6bf0c45741d68d03c99489d0b852ff06";
+    sha256 = "sha256-qEW/kmikD8Sa/v9HFM6ceXEnoHlo4ljwzOC8fsjxR4s=";
   };
 
   nativeBuildInputs = [ pkg-config installShellFiles ];
