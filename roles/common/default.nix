@@ -98,6 +98,7 @@
     jmtpfs
     lsd
     mdcat
+    neovim-remote
     netpbm
     ngrep
     nix-direnv-flakes
