@@ -156,6 +156,7 @@
           telescope-fzy-native-nvim
           telescope-nvim
           true-zen-nvim
+          undotree
           vim-css-color
           vim-expand-region
           vim-fish
