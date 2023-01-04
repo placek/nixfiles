@@ -129,6 +129,7 @@
       customRC = builtins.readFile ./sources/vim_config;
       packages.nix = with pkgs.vimPlugins; {
         start = [
+          alpha-nvim
           cmp-buffer
           cmp-cmdline
           cmp-nvim-lsp
@@ -148,7 +149,7 @@
           nvim-cmp
           nvim-lint
           nvim-lspconfig
-          nvim-treesitter
+          nvim-treesitter.withAllGrammars
           tabular
           targets-vim
           telescope-file-browser-nvim
