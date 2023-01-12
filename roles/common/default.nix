@@ -129,43 +129,54 @@
       customRC = builtins.readFile ./sources/vim_config;
       packages.nix = with pkgs.vimPlugins; {
         start = [
-          alpha-nvim
+          direnv-vim                      # direnv for vim
+          dressing-nvim                   # nicer interface
+          harpoon                         # harpoon my ass
+          leap-nvim                       # become a kangaroo
+          lualine-nvim                    # nicer statusbar
+          tabular                         # align text according to regexp
+          undotree                        # buffer history browser/manipulator
+          vim-css-color                   # highlight css colors
+          vim-signature                   # marks on signcolumn
+          which-key-nvim                  # mapping manager and cheatsheet
+
+          nvim-cmp                        # completion
           cmp-buffer
           cmp-cmdline
           cmp-nvim-lsp
           cmp-path
           cmp-tabnine
           cmp_luasnip
-          comment-nvim
-          direnv-vim
-          dressing-nvim
-          fidget-nvim
+
+          comment-nvim                    # comment utilities
+          todo-comments-nvim
+
+          luasnip                         # snippets
           friendly-snippets
-          gitsigns-nvim
-          harpoon
-          haskell-vim
-          lualine-nvim
-          luasnip
-          nvim-cmp
+
+          nvim-lspconfig                  # LSP
           nvim-lint
-          nvim-lspconfig
-          nvim-treesitter.withAllGrammars
-          tabular
-          targets-vim
+          fidget-nvim
+          aerial-nvim
+
+          telescope-nvim                  # list of files interface
           telescope-file-browser-nvim
           telescope-fzy-native-nvim
-          telescope-nvim
-          true-zen-nvim
-          undotree
-          vim-css-color
+
+          vim-fugitive                    # git in vim
+          gitsigns-nvim
+
+
+          targets-vim                     # text objects
+          vim-surround
           vim-expand-region
+
+          nvim-treesitter.withAllGrammars # better highlighting
+          haskell-vim
           vim-fish
-          vim-fugitive
           vim-jinja
           vim-nix
-          vim-signature
-          vim-surround
-          which-key-nvim
+          vim-ruby
         ];
       };
     };
