@@ -1,21 +1,23 @@
 { config, pkgs, ... }:
 
 {
-  boot.cleanTmpDir                 = true;
-  boot.consoleLogLevel             = 0;
-  boot.supportedFilesystems        = [ "ntfs" ];
-  console.keyMap                   = "pl";
-  hardware.keyboard.zsa.enable     = true;
-  i18n.defaultLocale               = "pl_PL.UTF-8";
-  nixpkgs.config.allowUnfree       = true;
-  services.cron.enable             = true;
-  services.pcscd.enable            = true;
-  services.printing.enable         = true;
-  services.printing.drivers        = [ pkgs.foo2zjs ];
-  services.udev.packages           = [ pkgs.yubikey-personalization ];
-  security.sudo.wheelNeedsPassword = false;
-  system.stateVersion              = "22.05";
-  time.timeZone                    = "Europe/Warsaw";
+  boot.cleanTmpDir                      = true;
+  boot.consoleLogLevel                  = 0;
+  boot.supportedFilesystems             = [ "ntfs" ];
+  console.keyMap                        = "pl";
+  hardware.keyboard.zsa.enable          = true;
+  i18n.defaultLocale                    = "pl_PL.UTF-8";
+  nixpkgs.config.allowUnfree            = true;
+  services.cron.enable                  = true;
+  services.pcscd.enable                 = true;
+  services.printing.enable              = true;
+  services.printing.drivers             = [ pkgs.foo2zjs ];
+  services.udev.packages                = [ pkgs.yubikey-personalization ];
+  security.sudo.wheelNeedsPassword      = false;
+  system.stateVersion                   = "22.05";
+  time.timeZone                         = "Europe/Warsaw";
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members   = [ "placek" ];
   # networking.extraHosts            = builtins.readFile ./sources/hosts.ipv4.txt;
 
   # flakes
