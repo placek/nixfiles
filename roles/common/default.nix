@@ -20,6 +20,11 @@
   users.extraGroups.vboxusers.members   = [ "placek" ];
   # networking.extraHosts            = builtins.readFile ./sources/hosts.ipv4.txt;
 
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
+
   # flakes
   nix = {
     extraOptions = ''
@@ -98,6 +103,7 @@
     imagemagick
     inxi
     jmtpfs
+    killall
     lsd
     mdcat
     neovim-remote
