@@ -93,7 +93,6 @@
     direnv
     entr
     fd
-    ffmpeg-full
     file
     fish
     fzf

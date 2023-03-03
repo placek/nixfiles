@@ -25,6 +25,7 @@
     cbqn
     croc
     docker-compose
+    ffmpeg-full
     ghostscript
     jmespath
     jq
@@ -37,6 +38,7 @@
     orca-c
     pinentry-curses
     playerctl
+    rnix-lsp
     rpi-imager
     qmk
     timidity
