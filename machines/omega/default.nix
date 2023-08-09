@@ -1,5 +1,9 @@
-{ config, lib, pkgs, modulesPath, ... }:
-
+{ config
+, lib
+, pkgs
+, modulesPath
+, ...
+}:
 let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
@@ -13,7 +17,7 @@ in
     imports =
       [ (modulesPath + "/installer/scan/not-detected.nix")
         ../../roles/common
-        ../../roles/entertainment
+        # ../../roles/entertainment
         ../../roles/workstation
         ../../roles/xserver
 
@@ -41,7 +45,12 @@ in
     environment.systemPackages                          = [ nvidia-offload ];
     hardware.bluetooth.enable                           = true;
     hardware.cpu.intel.updateMicrocode                  = lib.mkDefault config.hardware.enableRedistributableFirmware;
+    hardware.nvidia.modesetting.enable                  = true;
+    hardware.nvidia.nvidiaSettings                      = true;
+    hardware.nvidia.open                                = false;
+    hardware.nvidia.package                             = config.boot.kernelPackages.nvidiaPackages.stable;
     hardware.opengl.driSupport                          = true;
+    hardware.opengl.driSupport32Bit                     = true;
     hardware.opengl.enable                              = true;
     hardware.opengl.extraPackages                       = with pkgs; [ vaapiIntel libvdpau-va-gl intel-media-driver ];
     hardware.pulseaudio.enable                          = true;
@@ -52,8 +61,8 @@ in
     networking.firewall.enable                          = true;
     networking.hostName                                 = "omega";
     networking.wlanInterfaces.wlan0                     = { device = "wlp82s0"; mac = "01:00:00:00:00:01"; };
-    powerManagement.enable                              = true;
     powerManagement.cpuFreqGovernor                     = lib.mkDefault "performance";
+    powerManagement.enable                              = true;
     programs.light.enable                               = true;
     services.throttled.enable                           = lib.mkDefault true;
     services.xserver.libinput.enable                    = true;
@@ -61,20 +70,5 @@ in
     services.xserver.libinput.touchpad.scrollMethod     = "twofinger";
     services.xserver.libinput.touchpad.tapping          = false;
     services.xserver.resolutions                        = [ { x = 1920; y = 1080; } ];
-    services.xserver.videoDrivers                       = lib.mkDefault [ "nvidia" ];
-
-    hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
-    hardware.nvidia.prime = {
-      sync.enable = lib.mkDefault true;
-      intelBusId  = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
-    };
-
-    environment.variables = {
-      SYMBOL = "ω";
-    };
-
-    system.userActivationScripts = {
-      dotfiles = import ../../packages/dotfilesScript { pkgs = pkgs; mobile = true; };
-    };
+    services.xserver.videoDrivers                       = [ "nvidia" ];
   }

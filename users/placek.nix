@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  programs.fish.enable = true;
+
   users.users.placek = {
     description                 = "Paweł Placzyński";
     extraGroups                 = [ "audio" "disk" "docker" "input" "messagebus" "networkmanager" "plugdev" "systemd-journal" "video" "wheel" "qemu-libvirtd" "libvirtd" "dialout" ];

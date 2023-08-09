@@ -17,7 +17,7 @@ case "$1" in
 
   r*)
     target=$2
-    nix flake lock --update-input dotfiles_flake
+    nix flake lock
     nixos-rebuild switch --flake "$source_dir"#"$target"
     ;;
 
